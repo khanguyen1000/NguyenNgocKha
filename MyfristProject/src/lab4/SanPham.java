@@ -6,9 +6,9 @@ public class SanPham {
     private String tenSp;
     private double donGia;
     private double giamGia;
-    public SanPham(){};
-    public SanPham(String tenSp,double donGia,double giamGia){
-        this.tenSp=tenSp;
+        public SanPham(){};
+        public SanPham(String tenSp,double donGia,double giamGia){
+            this.tenSp=tenSp;
         this.donGia=donGia;
         this.giamGia=giamGia;
     };
