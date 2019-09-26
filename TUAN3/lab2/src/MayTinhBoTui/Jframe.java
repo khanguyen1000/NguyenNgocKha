@@ -11,9 +11,8 @@ package MayTinhBoTui;
  */
 public class Jframe extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Jframe
-     */
+    private long a=0;
+    private String pheptoan="";
     public Jframe() {
         super("Calculator");
         initComponents();
@@ -29,133 +28,551 @@ public class Jframe extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
-        jButton28 = new javax.swing.JButton();
-        jButton29 = new javax.swing.JButton();
-        jButton30 = new javax.swing.JButton();
-        jButton31 = new javax.swing.JButton();
-        jButton32 = new javax.swing.JButton();
-        jButton33 = new javax.swing.JButton();
-        jButton34 = new javax.swing.JButton();
-        jButton35 = new javax.swing.JButton();
-        jButton36 = new javax.swing.JButton();
-        jButton37 = new javax.swing.JButton();
+        so1 = new javax.swing.JButton();
+        so2 = new javax.swing.JButton();
+        so3 = new javax.swing.JButton();
+        chia = new javax.swing.JButton();
+        can2 = new javax.swing.JButton();
+        so4 = new javax.swing.JButton();
+        so5 = new javax.swing.JButton();
+        so6 = new javax.swing.JButton();
+        nhan = new javax.swing.JButton();
+        phantram = new javax.swing.JButton();
+        so7 = new javax.swing.JButton();
+        so8 = new javax.swing.JButton();
+        so9 = new javax.swing.JButton();
+        tru = new javax.swing.JButton();
+        phanso = new javax.swing.JButton();
+        so0 = new javax.swing.JButton();
+        soam = new javax.swing.JButton();
+        clear = new javax.swing.JButton();
+        cong = new javax.swing.JButton();
+        bang = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        showkq = new javax.swing.JLabel();
         hienThi = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new java.awt.GridLayout(4, 5));
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton5.setText("1");
-        jPanel1.add(jButton5);
+        so1.setBackground(new java.awt.Color(102, 102, 102));
+        so1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        so1.setForeground(new java.awt.Color(240, 240, 240));
+        so1.setText("1");
+        so1.setToolTipText("");
+        so1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                so1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(so1);
 
-        jButton12.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton12.setText("2");
-        jPanel1.add(jButton12);
+        so2.setBackground(new java.awt.Color(102, 102, 102));
+        so2.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        so2.setForeground(new java.awt.Color(240, 240, 240));
+        so2.setText("2");
+        so2.setToolTipText("");
+        so2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                so2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(so2);
 
-        jButton7.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton7.setText("3");
-        jPanel1.add(jButton7);
+        so3.setBackground(new java.awt.Color(102, 102, 102));
+        so3.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        so3.setForeground(new java.awt.Color(240, 240, 240));
+        so3.setText("3");
+        so3.setToolTipText("");
+        so3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                so3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(so3);
 
-        jButton19.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton19.setText("/");
-        jPanel1.add(jButton19);
+        chia.setBackground(new java.awt.Color(102, 102, 102));
+        chia.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        chia.setForeground(new java.awt.Color(240, 240, 240));
+        chia.setText("/");
+        chia.setToolTipText("");
+        chia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chiaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(chia);
 
-        jButton15.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton15.setText("sqrt");
-        jPanel1.add(jButton15);
+        can2.setBackground(new java.awt.Color(102, 102, 102));
+        can2.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        can2.setForeground(new java.awt.Color(240, 240, 240));
+        can2.setText("sqrt");
+        can2.setToolTipText("");
+        can2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                can2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(can2);
 
-        jButton14.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton14.setText("4");
-        jPanel1.add(jButton14);
+        so4.setBackground(new java.awt.Color(102, 102, 102));
+        so4.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        so4.setForeground(new java.awt.Color(240, 240, 240));
+        so4.setText("4");
+        so4.setToolTipText("");
+        so4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                so4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(so4);
 
-        jButton24.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton24.setText("5");
-        jPanel1.add(jButton24);
+        so5.setBackground(new java.awt.Color(102, 102, 102));
+        so5.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        so5.setForeground(new java.awt.Color(240, 240, 240));
+        so5.setText("5");
+        so5.setToolTipText("");
+        so5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                so5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(so5);
 
-        jButton25.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton25.setText("6");
-        jPanel1.add(jButton25);
+        so6.setBackground(new java.awt.Color(102, 102, 102));
+        so6.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        so6.setForeground(new java.awt.Color(240, 240, 240));
+        so6.setText("6");
+        so6.setToolTipText("");
+        so6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                so6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(so6);
 
-        jButton26.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton26.setText("*");
-        jPanel1.add(jButton26);
+        nhan.setBackground(new java.awt.Color(102, 102, 102));
+        nhan.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        nhan.setForeground(new java.awt.Color(240, 240, 240));
+        nhan.setText("*");
+        nhan.setToolTipText("");
+        nhan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nhanActionPerformed(evt);
+            }
+        });
+        jPanel1.add(nhan);
 
-        jButton27.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton27.setText("%");
-        jPanel1.add(jButton27);
+        phantram.setBackground(new java.awt.Color(102, 102, 102));
+        phantram.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        phantram.setForeground(new java.awt.Color(240, 240, 240));
+        phantram.setText("%");
+        phantram.setToolTipText("");
+        phantram.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                phantramActionPerformed(evt);
+            }
+        });
+        jPanel1.add(phantram);
 
-        jButton28.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton28.setText("7");
-        jPanel1.add(jButton28);
+        so7.setBackground(new java.awt.Color(102, 102, 102));
+        so7.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        so7.setForeground(new java.awt.Color(240, 240, 240));
+        so7.setText("7");
+        so7.setToolTipText("");
+        so7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                so7ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(so7);
 
-        jButton29.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton29.setText("8");
-        jPanel1.add(jButton29);
+        so8.setBackground(new java.awt.Color(102, 102, 102));
+        so8.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        so8.setForeground(new java.awt.Color(240, 240, 240));
+        so8.setText("8");
+        so8.setToolTipText("");
+        so8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                so8ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(so8);
 
-        jButton30.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton30.setText("9");
-        jPanel1.add(jButton30);
+        so9.setBackground(new java.awt.Color(102, 102, 102));
+        so9.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        so9.setForeground(new java.awt.Color(240, 240, 240));
+        so9.setText("9");
+        so9.setToolTipText("");
+        so9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                so9ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(so9);
 
-        jButton31.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton31.setText("-");
-        jPanel1.add(jButton31);
+        tru.setBackground(new java.awt.Color(102, 102, 102));
+        tru.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        tru.setForeground(new java.awt.Color(240, 240, 240));
+        tru.setText("-");
+        tru.setToolTipText("");
+        tru.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                truActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tru);
 
-        jButton32.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton32.setText("1/x");
-        jPanel1.add(jButton32);
+        phanso.setBackground(new java.awt.Color(102, 102, 102));
+        phanso.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        phanso.setForeground(new java.awt.Color(240, 240, 240));
+        phanso.setText("1/x");
+        phanso.setToolTipText("");
+        phanso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                phansoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(phanso);
 
-        jButton33.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton33.setText("0");
-        jPanel1.add(jButton33);
+        so0.setBackground(new java.awt.Color(102, 102, 102));
+        so0.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        so0.setForeground(new java.awt.Color(240, 240, 240));
+        so0.setText("0");
+        so0.setToolTipText("");
+        so0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                so0ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(so0);
 
-        jButton34.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton34.setText("+/-");
-        jPanel1.add(jButton34);
+        soam.setBackground(new java.awt.Color(102, 102, 102));
+        soam.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        soam.setForeground(new java.awt.Color(240, 240, 240));
+        soam.setText("+/-");
+        soam.setToolTipText("");
+        soam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                soamActionPerformed(evt);
+            }
+        });
+        jPanel1.add(soam);
 
-        jButton35.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton35.setText("C");
-        jPanel1.add(jButton35);
+        clear.setBackground(new java.awt.Color(102, 102, 102));
+        clear.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        clear.setForeground(new java.awt.Color(240, 240, 240));
+        clear.setText("C");
+        clear.setToolTipText("");
+        clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearActionPerformed(evt);
+            }
+        });
+        jPanel1.add(clear);
 
-        jButton36.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton36.setText("-");
-        jPanel1.add(jButton36);
+        cong.setBackground(new java.awt.Color(102, 102, 102));
+        cong.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        cong.setForeground(new java.awt.Color(240, 240, 240));
+        cong.setText("+");
+        cong.setToolTipText("");
+        cong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                congActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cong);
 
-        jButton37.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton37.setText("=");
-        jPanel1.add(jButton37);
+        bang.setBackground(new java.awt.Color(102, 102, 102));
+        bang.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        bang.setForeground(new java.awt.Color(240, 240, 240));
+        bang.setText("=");
+        bang.setToolTipText("");
+        bang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bangActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bang);
 
+        showkq.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        showkq.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+
+        hienThi.setBackground(java.awt.Color.darkGray);
         hienThi.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         hienThi.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         hienThi.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(showkq, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(hienThi, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(showkq, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 43, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 30, Short.MAX_VALUE)
+                    .addComponent(hienThi, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(hienThi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(hienThi, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void so1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so1ActionPerformed
+        // TODO add your handling code here:
+        String ht=this.hienThi.getText();
+        if(ht.length()<12)
+        {
+            if(ht.equals("0")) ht="";
+            long so=Long.parseLong(ht+so1.getText());
+            this.hienThi.setText(String.valueOf(so));
+            
+        }
+    }//GEN-LAST:event_so1ActionPerformed
+
+    private void so2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so2ActionPerformed
+            // TODO add your handling code here:
+        String ht=this.hienThi.getText();
+        if(ht.length()<12)
+        {
+            if(ht.equals("0")) ht="";
+            long so=Long.parseLong(ht+so2.getText());
+            this.hienThi.setText(String.valueOf(so));
+            
+        }
+    }//GEN-LAST:event_so2ActionPerformed
+
+    private void so3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so3ActionPerformed
+            // TODO add your handling code here:
+            String ht=this.hienThi.getText();
+        if(ht.length()<12)
+        {
+            if(ht.equals("0")) ht="";
+            long so=Long.parseLong(ht+so3.getText());
+            this.hienThi.setText(String.valueOf(so));
+            
+        }
+    }//GEN-LAST:event_so3ActionPerformed
+
+    private void so4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so4ActionPerformed
+        // TODO add your handling code here:
+        String ht=this.hienThi.getText();
+        if(ht.length()<12)
+        {
+            if(ht.equals("0")) ht="";
+            long so=Long.parseLong(ht+so4.getText());
+            this.hienThi.setText(String.valueOf(so));
+            
+        }
+    }//GEN-LAST:event_so4ActionPerformed
+
+    private void so5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so5ActionPerformed
+        // TODO add your handling code here:
+        String ht=this.hienThi.getText();
+        if(ht.length()<12)
+        {
+            if(ht.equals("0")) ht="";
+            long so=Long.parseLong(ht+so5.getText());
+            this.hienThi.setText(String.valueOf(so));
+            
+        }
+    }//GEN-LAST:event_so5ActionPerformed
+
+    private void so6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so6ActionPerformed
+        // TODO add your handling code here:
+        String ht=this.hienThi.getText();
+        if(ht.length()<12)
+        {
+            if(ht.equals("0")) ht="";
+            long so=Long.parseLong(ht+so6.getText());
+            this.hienThi.setText(String.valueOf(so));
+            
+        }
+    }//GEN-LAST:event_so6ActionPerformed
+
+    private void so7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so7ActionPerformed
+        // TODO add your handling code here:
+        String ht=this.hienThi.getText();
+        if(ht.length()<12)
+        {
+            if(ht.equals("0")) ht="";
+            long so=Long.parseLong(ht+so7.getText());
+            this.hienThi.setText(String.valueOf(so));
+            
+        }
+    }//GEN-LAST:event_so7ActionPerformed
+
+    private void so8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so8ActionPerformed
+        // TODO add your handling code here:
+        String ht=this.hienThi.getText();
+        if(ht.length()<12)
+        {
+            if(ht.equals("0")) ht="";
+            long so=Long.parseLong(ht+so8.getText());
+            this.hienThi.setText(String.valueOf(so));
+            
+        }
+    }//GEN-LAST:event_so8ActionPerformed
+
+    private void so9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so9ActionPerformed
+        // TODO add your handling code here:
+        String ht=this.hienThi.getText();
+        if(ht.length()<12)
+        {
+            if(ht.equals("0")) ht="";
+            long so=Long.parseLong(ht+so9.getText());
+            this.hienThi.setText(String.valueOf(so));
+            
+        }
+    }//GEN-LAST:event_so9ActionPerformed
+
+    private void so0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so0ActionPerformed
+        // TODO add your handling code here:
+        String ht=this.hienThi.getText();
+        if(ht.length()<12)
+        {
+            if(ht.equals("0")) ht="";
+            long so=Long.parseLong(ht+so0.getText());
+            this.hienThi.setText(String.valueOf(so));
+            
+        }
+    }//GEN-LAST:event_so0ActionPerformed
+
+    private void chiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chiaActionPerformed
+        // TODO add your handling code here:
+        this.a=Long.parseLong(this.hienThi.getText());
+        if(this.a!=0)
+        {
+            this.pheptoan="/";
+            this.hienThi.setText("");
+
+        }
+    }//GEN-LAST:event_chiaActionPerformed
+
+    private void nhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nhanActionPerformed
+        // TODO add your handling code here:
+        this.a=Long.parseLong(this.hienThi.getText());
+            this.pheptoan="*";
+            this.hienThi.setText("");
+
+
+    }//GEN-LAST:event_nhanActionPerformed
+
+    private void truActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_truActionPerformed
+        // TODO add your handling code here:
+        this.a=Long.parseLong(this.hienThi.getText());
+            this.pheptoan="-";
+            this.hienThi.setText("");
+
+  
+    }//GEN-LAST:event_truActionPerformed
+
+    private void congActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_congActionPerformed
+        // TODO add your handling code here:
+        this.a=Long.parseLong(this.hienThi.getText());
+       
+            this.pheptoan="+";
+            this.hienThi.setText("");
+            
+       
+    }//GEN-LAST:event_congActionPerformed
+
+    private void bangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bangActionPerformed
+        // TODO add your handling code here:
+        if(this.pheptoan.length()>0)
+        {
+            long b=Long.parseLong(this.hienThi.getText());
+             if(this.pheptoan.equals("+"))
+            {
+                long kq=this.a+b;
+                this.showkq.setText(String.valueOf(a)+"+"+String.valueOf(b));
+                this.hienThi.setText(String.valueOf(kq));
+               
+            
+            } else if(this.pheptoan.equals("-"))
+            {
+                long kq=this.a-b;
+                this.showkq.setText(String.valueOf(a)+"-"+String.valueOf(b));
+                this.hienThi.setText(String.valueOf(kq));
+            }else if(this.pheptoan.equals("*"))
+            {
+                long kq=this.a*b; 
+                this.showkq.setText(String.valueOf(a)+"*"+String.valueOf(b));
+                this.hienThi.setText(String.valueOf(kq));
+            }else if(this.pheptoan.equals("/"))
+            {  
+                    float kq  = (float)this.a/b;
+                    this.showkq.setText(String.valueOf(a)+"/"+String.valueOf(b));
+                    this.hienThi.setText(String.valueOf(kq));
+            }else if (this.pheptoan.equals("sqrt("))
+            {
+                    float kq=(float) Math.sqrt(a);
+                    this.showkq.setText("sqrt("+a+")");
+                    this.hienThi.setText(String.valueOf(kq));
+            }
+            
+        }
+      this.pheptoan="";this.a=0;
+    }//GEN-LAST:event_bangActionPerformed
+
+    private void can2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_can2ActionPerformed
+        // TODO add your handling code here:
+          this.a=Long.parseLong(this.hienThi.getText());
+        if(this.a!=0)
+        {
+            this.pheptoan="sqrt(";
+           
+        }
+    }//GEN-LAST:event_can2ActionPerformed
+
+    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
+        // TODO add your handling code here:
+         this.pheptoan="";this.hienThi.setText(""); this.showkq.setText("");
+    }//GEN-LAST:event_clearActionPerformed
+
+    private void phantramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phantramActionPerformed
+        // TODO add your handling code here:
+        this.a=Long.parseLong(this.hienThi.getText())/100;
+        this.hienThi.setText(String.valueOf(a));
+        
+    }//GEN-LAST:event_phantramActionPerformed
+
+    private void phansoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phansoActionPerformed
+        // TODO add your handling code here:
+         if(this.a!=0)
+        this.a=1/Long.parseLong(this.hienThi.getText());
+          this.hienThi.setText(String.valueOf(a)); 
+        
+    }//GEN-LAST:event_phansoActionPerformed
+
+    private void soamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soamActionPerformed
+           // TODO add your handling code here:
+           this.a=-Long.parseLong(this.hienThi.getText());
+           this.hienThi.setText(String.valueOf(a));
+    }//GEN-LAST:event_soamActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,27 +610,29 @@ public class Jframe extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bang;
+    private javax.swing.JButton can2;
+    private javax.swing.JButton chia;
+    private javax.swing.JButton clear;
+    private javax.swing.JButton cong;
     private javax.swing.JLabel hienThi;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton31;
-    private javax.swing.JButton jButton32;
-    private javax.swing.JButton jButton33;
-    private javax.swing.JButton jButton34;
-    private javax.swing.JButton jButton35;
-    private javax.swing.JButton jButton36;
-    private javax.swing.JButton jButton37;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton nhan;
+    private javax.swing.JButton phanso;
+    private javax.swing.JButton phantram;
+    private javax.swing.JLabel showkq;
+    private javax.swing.JButton so0;
+    private javax.swing.JButton so1;
+    private javax.swing.JButton so2;
+    private javax.swing.JButton so3;
+    private javax.swing.JButton so4;
+    private javax.swing.JButton so5;
+    private javax.swing.JButton so6;
+    private javax.swing.JButton so7;
+    private javax.swing.JButton so8;
+    private javax.swing.JButton so9;
+    private javax.swing.JButton soam;
+    private javax.swing.JButton tru;
     // End of variables declaration//GEN-END:variables
 }
