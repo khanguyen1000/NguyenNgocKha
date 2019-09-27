@@ -733,6 +733,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
                 new TroChoiXepO();   
              }else
              {
+                 JOptionPane.showMessageDialog(null,"thanks....");
                  System.exit(0);
              }
             

@@ -5,6 +5,10 @@
  */
 package bai7practices;
 
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author KHA
@@ -31,6 +35,11 @@ public class ThaoTacJlistJcheckBox extends javax.swing.JFrame {
         pnNorth = new javax.swing.JPanel();
         lbTitle = new javax.swing.JLabel();
         pnCenter = new javax.swing.JPanel();
+        btnNhap = new javax.swing.JButton();
+        txtNhap = new javax.swing.JTextField();
+        checkb = new javax.swing.JCheckBox();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jListSo = new javax.swing.JList<>();
         pnWest = new javax.swing.JPanel();
         btnTodenSoChan = new javax.swing.JButton();
         btnTodenSoLe = new javax.swing.JButton();
@@ -70,15 +79,45 @@ public class ThaoTacJlistJcheckBox extends javax.swing.JFrame {
 
         pnCenter.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 0, 0), null), "Nhập Thông Tin :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 3, 12))); // NOI18N
 
+        btnNhap.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        btnNhap.setText("Nhập");
+        btnNhap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNhapActionPerformed(evt);
+            }
+        });
+
+        txtNhap.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+
+        checkb.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        checkb.setText("Cho nhập số âm");
+
+        jListSo.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jListSo.setEnabled(false);
+        jScrollPane1.setViewportView(jListSo);
+
         javax.swing.GroupLayout pnCenterLayout = new javax.swing.GroupLayout(pnCenter);
         pnCenter.setLayout(pnCenterLayout);
         pnCenterLayout.setHorizontalGroup(
             pnCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 316, Short.MAX_VALUE)
+            .addGroup(pnCenterLayout.createSequentialGroup()
+                .addComponent(btnNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(checkb)
+                .addContainerGap(15, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         pnCenterLayout.setVerticalGroup(
             pnCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 205, Short.MAX_VALUE)
+            .addGroup(pnCenterLayout.createSequentialGroup()
+                .addGroup(pnCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnNhap)
+                    .addComponent(txtNhap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkb))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE))
         );
 
         pnBorder.add(pnCenter, java.awt.BorderLayout.CENTER);
@@ -89,6 +128,11 @@ public class ThaoTacJlistJcheckBox extends javax.swing.JFrame {
 
         btnTodenSoChan.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         btnTodenSoChan.setText("Tô đen số chẵn");
+        btnTodenSoChan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTodenSoChanActionPerformed(evt);
+            }
+        });
         pnWest.add(btnTodenSoChan);
 
         btnTodenSoLe.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
@@ -120,15 +164,20 @@ public class ThaoTacJlistJcheckBox extends javax.swing.JFrame {
 
         btnClose.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         btnClose.setText("đóng chương trình");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCloseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnSouthLayout = new javax.swing.GroupLayout(pnSouth);
         pnSouth.setLayout(pnSouthLayout);
         pnSouthLayout.setHorizontalGroup(
             pnSouthLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnSouthLayout.createSequentialGroup()
-                .addContainerGap(183, Short.MAX_VALUE)
+            .addGroup(pnSouthLayout.createSequentialGroup()
+                .addGap(151, 151, 151)
                 .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(133, 133, 133))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         pnSouthLayout.setVerticalGroup(
             pnSouthLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,6 +202,39 @@ public class ThaoTacJlistJcheckBox extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
+        // TODO add your handling code here:
+        int n= JOptionPane.showConfirmDialog(null,"Bạn Chắc Chắn chứ! ","Note!! ",JOptionPane.YES_NO_OPTION);
+        System.out.print(n);
+        if(n==JOptionPane.YES_OPTION)
+            System.exit(0);
+        else 
+            new ThaoTacJlistJcheckBox();
+            
+
+    }//GEN-LAST:event_btnCloseActionPerformed
+    DefaultListModel dlm= new DefaultListModel();
+    private void btnNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNhapActionPerformed
+        // TODO add your handling code here
+        long a=Long.parseLong(this.txtNhap.getText());
+        if(!this.checkb.isSelected()&&a<0)
+        {   
+            JOptionPane.showMessageDialog(null,"số nhâp không âm vui lòng nhập lai hoặc click vào ''cho nhập số âm''");
+        }else
+        {
+        dlm.addElement(a);
+        this.jListSo.setModel(dlm);
+        this.txtNhap.setText("");
+        }
+    }//GEN-LAST:event_btnNhapActionPerformed
+
+    private void btnTodenSoChanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTodenSoChanActionPerformed
+        // TODO add your handling code here:
+       // for(int i=0;i<this.jListSo.getFixedCellHeight();i++)
+         
+       
+    }//GEN-LAST:event_btnTodenSoChanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,16 +274,21 @@ public class ThaoTacJlistJcheckBox extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBotoDen;
     private javax.swing.JButton btnClose;
+    private javax.swing.JButton btnNhap;
     private javax.swing.JButton btnTodenSoChan;
     private javax.swing.JButton btnTodenSoLe;
     private javax.swing.JButton btnTodenSoNguyenTo;
     private javax.swing.JButton btnTongGiaTriTrongJlist;
     private javax.swing.JButton btnXoaCacGiaTriToden;
+    private javax.swing.JCheckBox checkb;
+    private javax.swing.JList<String> jListSo;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbTitle;
     private javax.swing.JPanel pnBorder;
     private javax.swing.JPanel pnCenter;
     private javax.swing.JPanel pnNorth;
     private javax.swing.JPanel pnSouth;
     private javax.swing.JPanel pnWest;
+    private javax.swing.JTextField txtNhap;
     // End of variables declaration//GEN-END:variables
 }
