@@ -60,12 +60,13 @@ public class TroChoiXepO extends javax.swing.JFrame {
         so15 = new javax.swing.JButton();
         soNull = new javax.swing.JButton();
         pnLast = new javax.swing.JPanel();
-        btnRestart = new javax.swing.JButton();
+        btnstart = new javax.swing.JButton();
+        btnCheck = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(java.awt.Color.lightGray);
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 0, 0));
-        setSize(new java.awt.Dimension(400, 400));
+        setSize(new java.awt.Dimension(640, 360));
 
         pnBorder.setLayout(new java.awt.BorderLayout());
 
@@ -73,15 +74,18 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel1.setText("TRÒ CHƠI XẾP O");
+        jLabel1.setText("Puzzle Game of Fifteen");
         pnFrist.add(jLabel1);
 
         pnBorder.add(pnFrist, java.awt.BorderLayout.PAGE_START);
 
+        pnCenter.setPreferredSize(new java.awt.Dimension(640, 360));
         pnCenter.setLayout(new java.awt.GridLayout(4, 4));
 
         so1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so1.setText("1");
+        so1.setContentAreaFilled(false);
+        so1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so1.setEnabled(false);
         so1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         so1.addActionListener(new java.awt.event.ActionListener() {
@@ -93,6 +97,8 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so2.setText("2");
+        so2.setContentAreaFilled(false);
+        so2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so2.setEnabled(false);
         so2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         so2.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +110,8 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so3.setText("3");
+        so3.setContentAreaFilled(false);
+        so3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so3.setEnabled(false);
         so3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         so3.addActionListener(new java.awt.event.ActionListener() {
@@ -115,6 +123,8 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so4.setText("4");
+        so4.setContentAreaFilled(false);
+        so4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so4.setEnabled(false);
         so4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         so4.addActionListener(new java.awt.event.ActionListener() {
@@ -126,6 +136,8 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so5.setText("5");
+        so5.setContentAreaFilled(false);
+        so5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so5.setEnabled(false);
         so5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         so5.addActionListener(new java.awt.event.ActionListener() {
@@ -137,6 +149,8 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so6.setText("6");
+        so6.setContentAreaFilled(false);
+        so6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so6.setEnabled(false);
         so6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         so6.addActionListener(new java.awt.event.ActionListener() {
@@ -148,6 +162,8 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so7.setText("7");
+        so7.setContentAreaFilled(false);
+        so7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so7.setEnabled(false);
         so7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         so7.addActionListener(new java.awt.event.ActionListener() {
@@ -159,6 +175,8 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so8.setText("8");
+        so8.setContentAreaFilled(false);
+        so8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so8.setEnabled(false);
         so8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         so8.addActionListener(new java.awt.event.ActionListener() {
@@ -170,6 +188,8 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so9.setText("9");
+        so9.setContentAreaFilled(false);
+        so9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so9.setEnabled(false);
         so9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         so9.addActionListener(new java.awt.event.ActionListener() {
@@ -181,6 +201,8 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so10.setText("10");
+        so10.setContentAreaFilled(false);
+        so10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so10.setEnabled(false);
         so10.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         so10.addActionListener(new java.awt.event.ActionListener() {
@@ -192,6 +214,8 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so11.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so11.setText("11");
+        so11.setContentAreaFilled(false);
+        so11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so11.setEnabled(false);
         so11.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         so11.addActionListener(new java.awt.event.ActionListener() {
@@ -203,6 +227,8 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so12.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so12.setText("12");
+        so12.setContentAreaFilled(false);
+        so12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so12.setEnabled(false);
         so12.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         so12.addActionListener(new java.awt.event.ActionListener() {
@@ -214,6 +240,8 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so13.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so13.setText("13");
+        so13.setContentAreaFilled(false);
+        so13.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so13.setEnabled(false);
         so13.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         so13.addActionListener(new java.awt.event.ActionListener() {
@@ -225,6 +253,8 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so14.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so14.setText("14");
+        so14.setContentAreaFilled(false);
+        so14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so14.setEnabled(false);
         so14.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         so14.addActionListener(new java.awt.event.ActionListener() {
@@ -236,6 +266,8 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so15.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so15.setText("15");
+        so15.setContentAreaFilled(false);
+        so15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so15.setEnabled(false);
         so15.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         so15.addActionListener(new java.awt.event.ActionListener() {
@@ -246,6 +278,8 @@ public class TroChoiXepO extends javax.swing.JFrame {
         pnCenter.add(so15);
 
         soNull.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        soNull.setContentAreaFilled(false);
+        soNull.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         soNull.setEnabled(false);
         soNull.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         soNull.addActionListener(new java.awt.event.ActionListener() {
@@ -257,14 +291,23 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         pnBorder.add(pnCenter, java.awt.BorderLayout.CENTER);
 
-        btnRestart.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btnRestart.setText("Start");
-        btnRestart.addActionListener(new java.awt.event.ActionListener() {
+        btnstart.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnstart.setText("Start");
+        btnstart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRestartActionPerformed(evt);
+                btnstartActionPerformed(evt);
             }
         });
-        pnLast.add(btnRestart);
+        pnLast.add(btnstart);
+
+        btnCheck.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnCheck.setText("Check");
+        btnCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCheckActionPerformed(evt);
+            }
+        });
+        pnLast.add(btnCheck);
 
         pnBorder.add(pnLast, java.awt.BorderLayout.PAGE_END);
 
@@ -272,11 +315,11 @@ public class TroChoiXepO extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnBorder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnBorder, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnBorder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnBorder, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
         );
 
         pack();
@@ -301,7 +344,6 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.so5.setText(a);
         this.a="";
         }
- autocheck();
     }//GEN-LAST:event_so5ActionPerformed
 
        
@@ -324,7 +366,6 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.so12.setText(a);
         this.a="";
         }
-    autocheck();
     }//GEN-LAST:event_so12ActionPerformed
 
     private void soNullActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soNullActionPerformed
@@ -344,7 +385,6 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.soNull.setText(a);
         this.a="";
         }
-         autocheck();
     }//GEN-LAST:event_soNullActionPerformed
 
     private void so15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so15ActionPerformed
@@ -367,7 +407,6 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.so15.setText(a);
         this.a="";
         }
-          autocheck();
         
     }//GEN-LAST:event_so15ActionPerformed
 
@@ -390,7 +429,6 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.so14.setText(a);
         this.a="";
         }
-       autocheck();
     }//GEN-LAST:event_so14ActionPerformed
 
     private void so11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so11ActionPerformed
@@ -417,7 +455,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.so11.setText(a);
         this.a="";
         } 
-          autocheck();
+ 
     }//GEN-LAST:event_so11ActionPerformed
 
     private void so10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so10ActionPerformed
@@ -444,7 +482,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.so10.setText(a);
         this.a="";
         }  
-          autocheck();
+
     }//GEN-LAST:event_so10ActionPerformed
 
     private void so9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so9ActionPerformed
@@ -466,7 +504,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.so9.setText(a);
         this.a="";
         } 
-          autocheck();
+     
     }//GEN-LAST:event_so9ActionPerformed
 
     private void so13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so13ActionPerformed
@@ -483,7 +521,6 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.a="";
         }
        
-          autocheck();
     }//GEN-LAST:event_so13ActionPerformed
 
     private void so8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so8ActionPerformed
@@ -505,7 +542,6 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.so8.setText(a);
         this.a="";
         }
- autocheck();
     }//GEN-LAST:event_so8ActionPerformed
 
     private void so7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so7ActionPerformed
@@ -532,7 +568,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.so7.setText(a);
         this.a="";
         }
- autocheck();
+
     }//GEN-LAST:event_so7ActionPerformed
 
     private void so6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so6ActionPerformed
@@ -559,7 +595,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.so6.setText(a);
         this.a="";
         }
- autocheck();
+
     }//GEN-LAST:event_so6ActionPerformed
 
     private void so4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so4ActionPerformed
@@ -575,7 +611,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.so4.setText(a);
         this.a="";
         }
- autocheck();
+
     }//GEN-LAST:event_so4ActionPerformed
 
     private void so3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so3ActionPerformed
@@ -597,7 +633,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.so3.setText(a);
         this.a="";
         }
-          autocheck();
+    
     }//GEN-LAST:event_so3ActionPerformed
 
     private void so2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so2ActionPerformed
@@ -618,8 +654,10 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.so3.setText(this.so2.getText());
         this.so2.setText(a);
         this.a="";
+        }
+         
     }//GEN-LAST:event_so2ActionPerformed
-    autocheck();}
+
     private void so1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so1ActionPerformed
         // TODO add your handling code here:
          if(this.so5.getText()=="")
@@ -633,21 +671,10 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.so1.setText(a);
         this.a="";
         }
-         autocheck();
+        
     }//GEN-LAST:event_so1ActionPerformed
 
-    public void autocheck()//check neu dung vi tri thi xuat dialog thong bao
-    {
-        if(this.so1.equals("1")&&this.so2.equals("2")&&this.so3.equals("3")&&this.so4.equals("4")&&this.so5.equals("5")&&
-                this.so6.equals("6")&&this.so7.equals("7")&&this.so8.equals("8")&&this.so9.equals("9")&&this.so10.equals("10")&&
-                this.so11.equals("11")&&this.so12.equals("12")&&this.so13.equals("1")&&this.so14.equals("14")&&this.so15.equals("15"))
-        {
-          
-            String n = JOptionPane.showConfirmDialog(JOptionPane.YES_NO_OPTION);
-        }
-        
-    }
-    private void btnRestartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestartActionPerformed
+    private void btnstartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnstartActionPerformed
         // TODO add your handling code here:
          so1.setEnabled(true);
         so2.setEnabled(true);
@@ -688,7 +715,29 @@ public class TroChoiXepO extends javax.swing.JFrame {
         this.so14.setText(String.valueOf(x.get(13)));
         this.so15.setText(String.valueOf(x.get(14)));
         this.soNull.setText("");
-    }//GEN-LAST:event_btnRestartActionPerformed
+    }//GEN-LAST:event_btnstartActionPerformed
+
+    private void btnCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckActionPerformed
+        // TODO add your handling code here:
+         if(this.so1.getText()=="1"&&this.so2.getText()=="2"&&this.so3.getText()=="3"&&this.so4.getText()=="4"&&this.so5.getText()=="5"&&
+                this.so6.getText()=="6"&&this.so7.getText()=="7"&&this.so8.getText()=="8"&&this.so9.getText()=="9"&&this.so10.getText()=="10"&&
+                this.so11.getText()=="11"&&this.so12.getText()=="12"&&this.so13.getText()=="13"&&this.so14.getText()=="14"&&this.so15.getText()=="15"
+                &&this.soNull.getText()=="")
+        {
+          
+            int n= JOptionPane.showConfirmDialog(null, "You Win and You want to Play again!",
+                  "Title", JOptionPane.YES_NO_OPTION);
+            System.out.print(n);
+             if(n==JOptionPane.YES_OPTION)
+             {
+                new TroChoiXepO();   
+             }else
+             {
+                 System.exit(0);
+             }
+            
+        }
+    }//GEN-LAST:event_btnCheckActionPerformed
 
     /**
      * @param args the command line arguments
@@ -726,7 +775,8 @@ public class TroChoiXepO extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRestart;
+    private javax.swing.JButton btnCheck;
+    private javax.swing.JButton btnstart;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel pnBorder;
     private javax.swing.JPanel pnCenter;
