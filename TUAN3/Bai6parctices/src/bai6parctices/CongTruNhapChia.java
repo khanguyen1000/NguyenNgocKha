@@ -5,6 +5,8 @@
  */
 package bai6parctices;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author KHA
@@ -27,12 +29,14 @@ public class CongTruNhapChia extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        pnWest = new javax.swing.JPanel();
+        lbPhepToan = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         pnFirst = new javax.swing.JPanel();
         btnXoa = new javax.swing.JButton();
         btnThoat = new javax.swing.JButton();
         btnGiai = new javax.swing.JButton();
-        pnWest = new javax.swing.JPanel();
         pnlast = new javax.swing.JPanel();
         pnCenter = new javax.swing.JPanel();
         lbNhapa = new javax.swing.JLabel();
@@ -42,12 +46,15 @@ public class CongTruNhapChia extends javax.swing.JFrame {
         lbkq = new javax.swing.JLabel();
         txtkq = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        rbChia = new javax.swing.JRadioButton();
-        rbCong = new javax.swing.JRadioButton();
-        rbNhan = new javax.swing.JRadioButton();
-        rbtru = new javax.swing.JRadioButton();
+        radChia = new javax.swing.JRadioButton();
+        radCong = new javax.swing.JRadioButton();
+        radNhan = new javax.swing.JRadioButton();
+        radTru = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lbPhepToan.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        lbPhepToan.setText("CỘNG TRỪ NHÂN CHIA");
 
         pnFirst.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.red, null), "Chọn Tác Vụ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 3, 14))); // NOI18N
 
@@ -85,30 +92,21 @@ public class CongTruNhapChia extends javax.swing.JFrame {
                     .addComponent(btnThoat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnXoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnGiai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         pnFirstLayout.setVerticalGroup(
             pnFirstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnFirstLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnGiai)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(19, 19, 19)
                 .addComponent(btnXoa)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btnThoat)
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout pnWestLayout = new javax.swing.GroupLayout(pnWest);
-        pnWest.setLayout(pnWestLayout);
-        pnWestLayout.setHorizontalGroup(
-            pnWestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        pnWestLayout.setVerticalGroup(
-            pnWestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 51, Short.MAX_VALUE)
-        );
+        pnlast.setBackground(new java.awt.Color(255, 204, 204));
 
         javax.swing.GroupLayout pnlastLayout = new javax.swing.GroupLayout(pnlast);
         pnlast.setLayout(pnlastLayout);
@@ -118,7 +116,7 @@ public class CongTruNhapChia extends javax.swing.JFrame {
         );
         pnlastLayout.setVerticalGroup(
             pnlastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addGap(0, 37, Short.MAX_VALUE)
         );
 
         pnCenter.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(null, java.awt.Color.red), "Nhập 2 số a và b", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 3, 14))); // NOI18N
@@ -134,53 +132,25 @@ public class CongTruNhapChia extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.red, null), "Chọn Phép Toán", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 3, 14))); // NOI18N
 
-        rbChia.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        rbChia.setText("Chia");
+        buttonGroup1.add(radChia);
+        radChia.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        radChia.setText("Chia");
+        jPanel2.add(radChia);
 
-        rbCong.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        rbCong.setText("Cộng");
+        buttonGroup1.add(radCong);
+        radCong.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        radCong.setText("Cộng");
+        jPanel2.add(radCong);
 
-        rbNhan.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        rbNhan.setText("Nhân");
+        buttonGroup1.add(radNhan);
+        radNhan.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        radNhan.setText("Nhân");
+        jPanel2.add(radNhan);
 
-        rbtru.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        rbtru.setText("Trừ");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 126, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGap(2, 2, 2)
-                            .addComponent(rbCong)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rbtru))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(rbNhan)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(rbChia)))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(23, 23, 23)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rbCong)
-                        .addComponent(rbtru))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rbNhan)
-                        .addComponent(rbChia))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
+        buttonGroup1.add(radTru);
+        radTru.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        radTru.setText("Trừ");
+        jPanel2.add(radTru);
 
         javax.swing.GroupLayout pnCenterLayout = new javax.swing.GroupLayout(pnCenter);
         pnCenter.setLayout(pnCenterLayout);
@@ -200,12 +170,10 @@ public class CongTruNhapChia extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnCenterLayout.createSequentialGroup()
                         .addComponent(lbNhapb)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtb, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(309, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnCenterLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
+                        .addGroup(pnCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtb, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnCenterLayout.setVerticalGroup(
             pnCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,13 +186,13 @@ public class CongTruNhapChia extends javax.swing.JFrame {
                 .addGroup(pnCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbNhapb)
                     .addComponent(txtb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbkq)
                     .addComponent(txtkq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52))
+                .addGap(77, 77, 77))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -232,33 +200,54 @@ public class CongTruNhapChia extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(pnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnCenter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(pnlast, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnWest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnCenter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(pnlast, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(pnWest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pnFirst, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnCenter, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pnCenter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(pnlast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85))
+        );
+
+        javax.swing.GroupLayout pnWestLayout = new javax.swing.GroupLayout(pnWest);
+        pnWest.setLayout(pnWestLayout);
+        pnWestLayout.setHorizontalGroup(
+            pnWestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnWestLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(lbPhepToan)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnWestLayout.setVerticalGroup(
+            pnWestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnWestLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lbPhepToan)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnWest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnWest, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -266,19 +255,66 @@ public class CongTruNhapChia extends javax.swing.JFrame {
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
         // TODO add your handling code here:
-        // for(int i=0;i<this.jListSo.getFixedCellHeight();i++)
-
+        this.txta.setText("");
+        this.txtb.setText("");
+        this.txtkq.setText("");
+        this.txta.requestFocus();
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnGiaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGiaiActionPerformed
         // TODO add your handling code here:
-        // for(int i=0;i<this.jListSo.getFixedCellHeight();i++)
-
+       String sa=this.txta.getText();
+       int a=0,b=0;
+       try{
+           a=Integer.parseInt(sa);
+       }
+       catch(Exception ex)
+       {
+           JOptionPane.showMessageDialog(null,"nhap sai dinh dang");
+           this.txta.selectAll();
+           this.txta.requestFocus();
+           return;
+        
+       }
+       String sb=this.txtb.getText();
+       try{
+           b=Integer.parseInt(sb);
+           
+       }
+       catch(Exception ex)
+       {
+           JOptionPane.showMessageDialog(null,"nhap sai dinh dang");
+          this.txtb.selectAll();
+           this.txtb.requestFocus();
+           return;
+       }
+       double kq=0;
+       if(this.radCong.isSelected())
+       {
+           kq=a+b;
+       }else if(this.radTru.isSelected())
+       {
+           kq=a-b;
+       }else if(this.radNhan.isSelected())
+       {
+           kq=a*b;
+       }else if(this.radChia.isSelected())
+       {
+           if(b<0)
+           {
+               JOptionPane.showMessageDialog(null,"loi b >0");
+           }else
+               kq=(double)a/b;
+       }
+        this.txtkq.setText(String.valueOf(kq));
+       
+        
     }//GEN-LAST:event_btnGiaiActionPerformed
 
     private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
-        // TODO add your handling code here:
-        // for(int i=0;i<this.jListSo.getFixedCellHeight();i++)
+       int i=JOptionPane.showConfirmDialog(null,"ban muon thoat ha!","thoat",JOptionPane.YES_OPTION);
+        if(i==JOptionPane.YES_OPTION)
+            System.exit(0);
 
     }//GEN-LAST:event_btnThoatActionPerformed
 
@@ -321,19 +357,25 @@ public class CongTruNhapChia extends javax.swing.JFrame {
     private javax.swing.JButton btnGiai;
     private javax.swing.JButton btnThoat;
     private javax.swing.JButton btnXoa;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JLabel lbNhapa;
     private javax.swing.JLabel lbNhapb;
+    private javax.swing.JLabel lbPhepToan;
     private javax.swing.JLabel lbkq;
     private javax.swing.JPanel pnCenter;
     private javax.swing.JPanel pnFirst;
     private javax.swing.JPanel pnWest;
     private javax.swing.JPanel pnlast;
-    private javax.swing.JRadioButton rbChia;
-    private javax.swing.JRadioButton rbCong;
-    private javax.swing.JRadioButton rbNhan;
-    private javax.swing.JRadioButton rbtru;
+    private javax.swing.JRadioButton radChia;
+    private javax.swing.JRadioButton radCong;
+    private javax.swing.JRadioButton radNhan;
+    private javax.swing.JRadioButton radTru;
     private javax.swing.JTextField txta;
     private javax.swing.JTextField txtb;
     private javax.swing.JTextField txtkq;
