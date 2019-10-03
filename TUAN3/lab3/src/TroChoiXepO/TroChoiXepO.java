@@ -84,6 +84,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so1.setText("1");
+        so1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         so1.setContentAreaFilled(false);
         so1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so1.setEnabled(false);
@@ -97,6 +98,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so2.setText("2");
+        so2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         so2.setContentAreaFilled(false);
         so2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so2.setEnabled(false);
@@ -110,6 +112,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so3.setText("3");
+        so3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         so3.setContentAreaFilled(false);
         so3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so3.setEnabled(false);
@@ -123,6 +126,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so4.setText("4");
+        so4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         so4.setContentAreaFilled(false);
         so4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so4.setEnabled(false);
@@ -136,6 +140,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so5.setText("5");
+        so5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         so5.setContentAreaFilled(false);
         so5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so5.setEnabled(false);
@@ -149,6 +154,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so6.setText("6");
+        so6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         so6.setContentAreaFilled(false);
         so6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so6.setEnabled(false);
@@ -162,6 +168,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so7.setText("7");
+        so7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         so7.setContentAreaFilled(false);
         so7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so7.setEnabled(false);
@@ -175,6 +182,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so8.setText("8");
+        so8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         so8.setContentAreaFilled(false);
         so8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so8.setEnabled(false);
@@ -188,6 +196,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so9.setText("9");
+        so9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         so9.setContentAreaFilled(false);
         so9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so9.setEnabled(false);
@@ -201,6 +210,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so10.setText("10");
+        so10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         so10.setContentAreaFilled(false);
         so10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so10.setEnabled(false);
@@ -214,6 +224,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so11.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so11.setText("11");
+        so11.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         so11.setContentAreaFilled(false);
         so11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so11.setEnabled(false);
@@ -227,6 +238,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so12.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so12.setText("12");
+        so12.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         so12.setContentAreaFilled(false);
         so12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so12.setEnabled(false);
@@ -240,6 +252,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so13.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so13.setText("13");
+        so13.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         so13.setContentAreaFilled(false);
         so13.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so13.setEnabled(false);
@@ -253,6 +266,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so14.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so14.setText("14");
+        so14.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         so14.setContentAreaFilled(false);
         so14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so14.setEnabled(false);
@@ -266,6 +280,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
 
         so15.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         so15.setText("15");
+        so15.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         so15.setContentAreaFilled(false);
         so15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         so15.setEnabled(false);
@@ -278,6 +293,7 @@ public class TroChoiXepO extends javax.swing.JFrame {
         pnCenter.add(so15);
 
         soNull.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        soNull.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         soNull.setContentAreaFilled(false);
         soNull.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         soNull.setEnabled(false);
