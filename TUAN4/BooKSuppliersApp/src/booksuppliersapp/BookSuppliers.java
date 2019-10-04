@@ -4,15 +4,13 @@
  * and open the template in the editor.
  */
 package booksuppliersapp;
-
-import java.beans.Statement;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.sql.ResultSet;
-import net.sourceforge.jtds.jdbc.Driver;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
 
 /**
  *
@@ -23,8 +21,11 @@ public class BookSuppliers extends javax.swing.JFrame {
     /**
      * Creates new form BookSuppliers
      */
-    
+    static final String url= "jdbc:sqlserver://localhost:1433;databaseName=dbBookSuppliers";
+    static final String user = "sa";
+    static final String pass = "123"; 
     public BookSuppliers() {
+       
         initComponents();
     }
 
@@ -63,10 +64,15 @@ public class BookSuppliers extends javax.swing.JFrame {
         btnDelete = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         pnLast = new javax.swing.JPanel();
-        jscrpData = new javax.swing.JScrollPane();
-        tbData = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblData = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                formComponentShown(evt);
+            }
+        });
 
         pnfirst.setBackground(new java.awt.Color(0, 102, 51));
         pnfirst.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -99,7 +105,6 @@ public class BookSuppliers extends javax.swing.JFrame {
         lblID.setText("Suppliers ID:");
 
         txtID.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        txtID.setEnabled(false);
 
         txtName.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
 
@@ -230,14 +235,27 @@ public class BookSuppliers extends javax.swing.JFrame {
         btnSave.setBackground(new java.awt.Color(255, 102, 0));
         btnSave.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnSave.setText("Save");
+        btnSave.setEnabled(false);
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         btnDelete.setBackground(new java.awt.Color(0, 102, 0));
         btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.setEnabled(false);
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         btnUpdate.setBackground(new java.awt.Color(153, 0, 0));
         btnUpdate.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnUpdate.setText("Update");
+        btnUpdate.setEnabled(false);
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
@@ -271,47 +289,31 @@ public class BookSuppliers extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        tbData.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        tbData.setModel(new javax.swing.table.DefaultTableModel(
+        tblData.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Supplier ID", "Supplier Name", "Books", "Newspaper", "Journals and Magazines", "Address", "Contact No", "Email ID", "Remarks"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tbData.setColumnSelectionAllowed(true);
-        tbData.setEnabled(false);
-        tbData.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        tbData.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jscrpData.setViewportView(tbData);
+        ));
+        jScrollPane1.setViewportView(tblData);
 
         javax.swing.GroupLayout pnLastLayout = new javax.swing.GroupLayout(pnLast);
         pnLast.setLayout(pnLastLayout);
         pnLastLayout.setHorizontalGroup(
             pnLastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jscrpData)
+            .addComponent(jScrollPane1)
         );
         pnLastLayout.setVerticalGroup(
             pnLastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnLastLayout.createSequentialGroup()
-                .addComponent(jscrpData, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(pnLastLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -326,7 +328,7 @@ public class BookSuppliers extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(pnCentre2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(pnCenter1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 187, Short.MAX_VALUE))
+                .addGap(0, 173, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -344,28 +346,128 @@ public class BookSuppliers extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+       Connection conn = null;
+        String strBook="";
+        String strNewsPape="";
+        String strJornals="";
+        if(chebBooks.isSelected())
+            strBook="Books";
+        if(chebNewpapers.isSelected())
+            strNewsPape="Newspapers";
+        if(chebJournalsandMagazines.isSelected())
+            strJornals="JournalsandMagazines";
+        PreparedStatement stmt = null;
         try {
-            // TODO add your handling code here:
-            Connection conn = null;
-            Statement st = null;
-            ResultSet rs=null;
-            
-            conn = DriverManager.getConnection("jdbc:jtds:sqlserver://localhost:1433;DatabaseName=dbBookSuppliers", "sa", "123");
-            String sql = "select * from Books ";
-            st = (Statement) conn.createStatement();
-            rs = st.executeQuery(sql);
+            conn=DriverManager.getConnection(url,user,pass);
+             String sql = " update books set name='"+txtName.getText()+"',books='"+strBook+"',newspapers='"+strNewsPape+"',journalsandmagazines='"+strJornals+"',address='"+txtAddress.getText()+"',contact='"+txtContactNo.getText()+"',email='"+txtEmail.getText()+"',remarks='"+jTxtaRemarks.getText()+"'where id="+txtID.getText();
+             
+            stmt = conn.prepareStatement(sql);
+             int rows = stmt.executeUpdate();
+             System.out.println("update succeedfull : " + rows );
+             
+            conn.close();
         } catch (SQLException ex) {
             Logger.getLogger(BookSuppliers.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+        loadData();
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
         // TODO add your handling code here:
-        
+        btnDelete.setEnabled(true);
+        btnSave.setEnabled(true);
+        btnUpdate.setEnabled(true);
+        loadData();
     }//GEN-LAST:event_btnNewActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        // TODO add your handling code here:
+        Connection conn = null;
+        String strBook="";
+        String strNewsPape="";
+        String strJornals="";
+        if(chebBooks.isSelected())
+            strBook="Books";
+        if(chebNewpapers.isSelected())
+            strNewsPape="Newspapers";
+        if(chebJournalsandMagazines.isSelected())
+            strJornals="JournalsandMagazines";
+        PreparedStatement stmt = null;
+        try {
+            conn=DriverManager.getConnection(url,user,pass);
+             String sql = "insert into books values('"+txtName.getText()+"','"+strBook+"','"+strJornals+"','"+strNewsPape+"','"+txtAddress.getText()+"','"+txtContactNo.getText()+"','"+txtEmail.getText()+"','"+jTxtaRemarks.getText()+"')";
+            stmt = conn.prepareStatement(sql);
+             int rows = stmt.executeUpdate();
+             System.out.println("insert succeedfull : " + rows );
+             conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(BookSuppliers.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        loadData();
+    }//GEN-LAST:event_btnSaveActionPerformed
     
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+         Connection conn = null;
+        String strBook="";
+        String strNewsPape="";
+        String strJornals="";
+        if(chebBooks.isSelected())
+            strBook="Books";
+        if(chebNewpapers.isSelected())
+            strNewsPape="Newspapers";
+        if(chebJournalsandMagazines.isSelected())
+            strJornals="JournalsandMagazines";
+        PreparedStatement stmt = null;
+        try {
+            conn=DriverManager.getConnection(url,user,pass);
+             String sql = "delete from books where id="+txtID.getText();
+            stmt = conn.prepareStatement(sql);
+             int rows = stmt.executeUpdate();
+             System.out.println("delete succeedfull : " + rows );
+             conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(BookSuppliers.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        loadData();
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+        // TODO add your handling code here:
+        loadData();
+    }//GEN-LAST:event_formComponentShown
+  
+    private void loadData(){
+        try {
+            tblData.removeAll();
+            String[] arr= {"Supplier ID","Supplier Name","Books","Newspapers","Journals and Magazines","Address","Contact No","Email ID","Remarks"};
+            String sql="select *from books";
+            DefaultTableModel model=new DefaultTableModel(arr,0);
+            Connection conn=DriverManager.getConnection(url, user, pass);
+            PreparedStatement ps=conn.prepareStatement(sql);
+            ResultSet rs= ps.executeQuery();
+            while(rs.next())
+            {
+                Vector vector=new Vector();
+                vector.add(rs.getInt(1));
+                vector.add(rs.getString(2));
+                vector.add(rs.getString(3));
+                vector.add(rs.getString(4));
+                vector.add(rs.getString(5));
+                vector.add(rs.getString(6));
+                vector.add(rs.getString(7));
+                vector.add(rs.getString(8));
+                model.addRow(vector);
+                
+            }
+            tblData.setModel(model);
+        } catch (SQLException ex) {
+            Logger.getLogger(BookSuppliers.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         
+         
+        
+    }
   
     /**
      * @param args the command line arguments
@@ -410,25 +512,22 @@ public class BookSuppliers extends javax.swing.JFrame {
     private javax.swing.JCheckBox chebBooks;
     private javax.swing.JCheckBox chebJournalsandMagazines;
     private javax.swing.JCheckBox chebNewpapers;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTxtaRemarks;
-    private javax.swing.JScrollPane jscrpData;
     private javax.swing.JScrollPane jsrpRemarks;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblContactNo;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblID;
-    private javax.swing.JLabel lblID1;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblRemarks;
     private javax.swing.JLabel lblType;
     private javax.swing.JLabel lbtitle;
     private javax.swing.JPanel pnCenter1;
-    private javax.swing.JPanel pnCenter2;
     private javax.swing.JPanel pnCentre2;
     private javax.swing.JPanel pnLast;
     private javax.swing.JPanel pnfirst;
-    private javax.swing.JTable tbData;
+    private javax.swing.JTable tblData;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtContactNo;
     private javax.swing.JTextField txtEmail;
