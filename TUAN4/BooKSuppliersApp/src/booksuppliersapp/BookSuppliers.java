@@ -8,6 +8,7 @@ import java.sql.*;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
@@ -24,6 +25,7 @@ public class BookSuppliers extends javax.swing.JFrame {
     static final String url= "jdbc:sqlserver://localhost:1433;databaseName=dbBookSuppliers";
     static final String user = "sa";
     static final String pass = "123"; 
+    DefaultTableModel model=null;
     public BookSuppliers() {
        
         initComponents();
@@ -105,6 +107,7 @@ public class BookSuppliers extends javax.swing.JFrame {
         lblID.setText("Suppliers ID:");
 
         txtID.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        txtID.setEnabled(false);
 
         txtName.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
 
@@ -300,6 +303,16 @@ public class BookSuppliers extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblData.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblDataMouseClicked(evt);
+            }
+        });
+        tblData.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tblDataKeyReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblData);
 
         javax.swing.GroupLayout pnLastLayout = new javax.swing.GroupLayout(pnLast);
@@ -377,7 +390,11 @@ public class BookSuppliers extends javax.swing.JFrame {
         btnDelete.setEnabled(true);
         btnSave.setEnabled(true);
         btnUpdate.setEnabled(true);
-        loadData();
+        txtID.setText("");
+        txtAddress.setText("");
+        txtContactNo.setText("");
+        txtEmail.setText("");
+        txtName.setText("");
     }//GEN-LAST:event_btnNewActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
@@ -436,13 +453,57 @@ public class BookSuppliers extends javax.swing.JFrame {
         // TODO add your handling code here:
         loadData();
     }//GEN-LAST:event_formComponentShown
-  
+    private void getdataRow(int selectR)
+   { 
+        String data= tblData.getModel().getValueAt(selectR,1).toString();
+        String id=tblData.getModel().getValueAt(selectR,0).toString();
+       
+        String name=tblData.getModel().getValueAt(selectR,1).toString();
+        String books=tblData.getModel().getValueAt(selectR,2).toString();
+        String newspapers=tblData.getModel().getValueAt(selectR,3).toString();
+        String JornalsandMagazines=tblData.getModel().getValueAt(selectR,4).toString();
+        String Address=tblData.getModel().getValueAt(selectR,5).toString();
+        String Contac=tblData.getModel().getValueAt(selectR,6).toString();
+        String mail=tblData.getModel().getValueAt(selectR,7).toString();
+        //String remarks=tblData.getModel().getValueAt(selectR,8).toString();
+        //JOptionPane.showMessageDialog(null,remarks);
+        txtID.setText(id);
+        txtName.setText(name);
+        txtAddress.setText(Address);
+        txtContactNo.setText(Contac);
+        txtEmail.setText(mail);
+        
+        //jTxtaRemarks.setText(remarks);
+    }
+    private void tblDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDataMouseClicked
+        // TODO add your handling code here:
+       btnDelete.setEnabled(true);
+       btnSave.setEnabled(true);
+       btnUpdate.setEnabled(true);
+        int selectR=tblData.getSelectedRow();
+        
+        getdataRow(selectR);
+       
+        
+    }//GEN-LAST:event_tblDataMouseClicked
+
+    private void tblDataKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblDataKeyReleased
+        // TODO add your handling code here:
+         btnDelete.setEnabled(true);
+       btnSave.setEnabled(true);
+       btnUpdate.setEnabled(true);
+        int selectR=tblData.getSelectedRow();
+        getdataRow(selectR);
+    }//GEN-LAST:event_tblDataKeyReleased
+   
+    
     private void loadData(){
         try {
             tblData.removeAll();
             String[] arr= {"Supplier ID","Supplier Name","Books","Newspapers","Journals and Magazines","Address","Contact No","Email ID","Remarks"};
+        
             String sql="select *from books";
-            DefaultTableModel model=new DefaultTableModel(arr,0);
+            model=new DefaultTableModel(arr,0);
             Connection conn=DriverManager.getConnection(url, user, pass);
             PreparedStatement ps=conn.prepareStatement(sql);
             ResultSet rs= ps.executeQuery();
@@ -461,6 +522,7 @@ public class BookSuppliers extends javax.swing.JFrame {
                 
             }
             tblData.setModel(model);
+            conn.close();
         } catch (SQLException ex) {
             Logger.getLogger(BookSuppliers.class.getName()).log(Level.SEVERE, null, ex);
         }
