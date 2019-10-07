@@ -40,6 +40,7 @@ public class BookSuppliers extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         pnfirst = new javax.swing.JPanel();
         lbtitle = new javax.swing.JLabel();
         pnCenter1 = new javax.swing.JPanel();
@@ -117,12 +118,15 @@ public class BookSuppliers extends javax.swing.JFrame {
         lblType.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         lblType.setText("Suppliers Type:");
 
+        buttonGroup1.add(chebBooks);
         chebBooks.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         chebBooks.setText("Books");
 
+        buttonGroup1.add(chebNewpapers);
         chebNewpapers.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         chebNewpapers.setText("News Papers");
 
+        buttonGroup1.add(chebJournalsandMagazines);
         chebJournalsandMagazines.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         chebJournalsandMagazines.setText("Journals and Magazines");
 
@@ -292,15 +296,13 @@ public class BookSuppliers extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
+        tblData.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         tblData.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         tblData.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -359,19 +361,19 @@ public class BookSuppliers extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-       Connection conn = null;
+
         String strBook="";
         String strNewsPape="";
         String strJornals="";
         if(chebBooks.isSelected())
-            strBook="Books";
+            strBook="X";
         if(chebNewpapers.isSelected())
-            strNewsPape="Newspapers";
+            strNewsPape="X";
         if(chebJournalsandMagazines.isSelected())
-            strJornals="JournalsandMagazines";
+            strJornals="X";
         PreparedStatement stmt = null;
         try {
-            conn=DriverManager.getConnection(url,user,pass);
+             Connection conn=DriverManager.getConnection(url,user,pass);
              String sql = " update books set name='"+txtName.getText()+"',books='"+strBook+"',newspapers='"+strNewsPape+"',journalsandmagazines='"+strJornals+"',address='"+txtAddress.getText()+"',contact='"+txtContactNo.getText()+"',email='"+txtEmail.getText()+"',remarks='"+jTxtaRemarks.getText()+"'where id="+txtID.getText();
              
             stmt = conn.prepareStatement(sql);
@@ -395,23 +397,23 @@ public class BookSuppliers extends javax.swing.JFrame {
         txtContactNo.setText("");
         txtEmail.setText("");
         txtName.setText("");
+   
     }//GEN-LAST:event_btnNewActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        Connection conn = null;
         String strBook="";
         String strNewsPape="";
         String strJornals="";
         if(chebBooks.isSelected())
-            strBook="Books";
+            strBook="X";
         if(chebNewpapers.isSelected())
-            strNewsPape="Newspapers";
+            strNewsPape="X";
         if(chebJournalsandMagazines.isSelected())
-            strJornals="JournalsandMagazines";
+            strJornals="X";
         PreparedStatement stmt = null;
         try {
-            conn=DriverManager.getConnection(url,user,pass);
+          Connection conn=DriverManager.getConnection(url,user,pass);
              String sql = "insert into books values('"+txtName.getText()+"','"+strBook+"','"+strJornals+"','"+strNewsPape+"','"+txtAddress.getText()+"','"+txtContactNo.getText()+"','"+txtEmail.getText()+"','"+jTxtaRemarks.getText()+"')";
             stmt = conn.prepareStatement(sql);
              int rows = stmt.executeUpdate();
@@ -425,19 +427,18 @@ public class BookSuppliers extends javax.swing.JFrame {
     
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-         Connection conn = null;
         String strBook="";
         String strNewsPape="";
         String strJornals="";
         if(chebBooks.isSelected())
-            strBook="Books";
-        if(chebNewpapers.isSelected())
-            strNewsPape="Newspapers";
-        if(chebJournalsandMagazines.isSelected())
-            strJornals="JournalsandMagazines";
+            strBook="X";
+        else if(chebNewpapers.isSelected())
+            strNewsPape="X";
+        else if(chebJournalsandMagazines.isSelected())
+            strJornals="X";
         PreparedStatement stmt = null;
         try {
-            conn=DriverManager.getConnection(url,user,pass);
+           Connection conn=DriverManager.getConnection(url,user,pass);
              String sql = "delete from books where id="+txtID.getText();
             stmt = conn.prepareStatement(sql);
              int rows = stmt.executeUpdate();
@@ -455,9 +456,8 @@ public class BookSuppliers extends javax.swing.JFrame {
     }//GEN-LAST:event_formComponentShown
     private void getdataRow(int selectR)
    { 
-        String data= tblData.getModel().getValueAt(selectR,1).toString();
+        
         String id=tblData.getModel().getValueAt(selectR,0).toString();
-       
         String name=tblData.getModel().getValueAt(selectR,1).toString();
         String books=tblData.getModel().getValueAt(selectR,2).toString();
         String newspapers=tblData.getModel().getValueAt(selectR,3).toString();
@@ -466,12 +466,17 @@ public class BookSuppliers extends javax.swing.JFrame {
         String Contac=tblData.getModel().getValueAt(selectR,6).toString();
         String mail=tblData.getModel().getValueAt(selectR,7).toString();
         //String remarks=tblData.getModel().getValueAt(selectR,8).toString();
-        //JOptionPane.showMessageDialog(null,remarks);
         txtID.setText(id);
         txtName.setText(name);
         txtAddress.setText(Address);
         txtContactNo.setText(Contac);
         txtEmail.setText(mail);
+       if(books=="X")
+       {chebBooks.doClick();}
+      else if(newspapers=="X")
+       {chebNewpapers.doClick();}
+       else if(JornalsandMagazines=="X")
+       {chebJournalsandMagazines.doClick();}
         
         //jTxtaRemarks.setText(remarks);
     }
@@ -571,6 +576,7 @@ public class BookSuppliers extends javax.swing.JFrame {
     private javax.swing.JButton btnNew;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnUpdate;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JCheckBox chebBooks;
     private javax.swing.JCheckBox chebJournalsandMagazines;
     private javax.swing.JCheckBox chebNewpapers;
