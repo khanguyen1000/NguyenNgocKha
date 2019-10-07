@@ -362,21 +362,21 @@ public class BookSuppliers extends javax.swing.JFrame {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
 
-        String strBook="";
-        String strNewsPape="";
-        String strJornals="";
+        int jp= JOptionPane.showConfirmDialog(null,"are u Sure","notes!",JOptionPane.YES_NO_OPTION);
+        if(jp== JOptionPane.OK_OPTION)
+        {  
+        String strType=null;
         if(chebBooks.isSelected())
-            strBook="X";
-        if(chebNewpapers.isSelected())
-            strNewsPape="X";
-        if(chebJournalsandMagazines.isSelected())
-            strJornals="X";
+            strType="Books";
+        else if(chebNewpapers.isSelected())
+            strType="Newpapers";
+        else if(chebJournalsandMagazines.isSelected())
+            strType="Journals and Magazines";
         PreparedStatement stmt = null;
         try {
              Connection conn=DriverManager.getConnection(url,user,pass);
-             String sql = " update books set name='"+txtName.getText()+"',books='"+strBook+"',newspapers='"+strNewsPape+"',journalsandmagazines='"+strJornals+"',address='"+txtAddress.getText()+"',contact='"+txtContactNo.getText()+"',email='"+txtEmail.getText()+"',remarks='"+jTxtaRemarks.getText()+"'where id="+txtID.getText();
-             
-            stmt = conn.prepareStatement(sql);
+             String sql = " update tb_books set name='"+txtName.getText()+"',supplierTypes='"+strType+"',address='"+txtAddress.getText()+"',contact='"+txtContactNo.getText()+"',email='"+txtEmail.getText()+"',remarks='"+jTxtaRemarks.getText()+"'where id="+txtID.getText();
+             stmt = conn.prepareStatement(sql);
              int rows = stmt.executeUpdate();
              System.out.println("update succeedfull : " + rows );
              
@@ -385,6 +385,22 @@ public class BookSuppliers extends javax.swing.JFrame {
             Logger.getLogger(BookSuppliers.class.getName()).log(Level.SEVERE, null, ex);
         }
         loadData();
+        txtID.setText("");
+        txtAddress.setText("");
+        txtContactNo.setText("");
+        txtEmail.setText("");
+        txtName.setText("");
+        jTxtaRemarks.setText("");
+        }
+        else{
+             txtID.setText("");
+        txtAddress.setText("");
+        txtContactNo.setText("");
+        txtEmail.setText("");
+        txtName.setText("");
+        jTxtaRemarks.setText("");
+        }
+        
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
@@ -397,24 +413,26 @@ public class BookSuppliers extends javax.swing.JFrame {
         txtContactNo.setText("");
         txtEmail.setText("");
         txtName.setText("");
+        jTxtaRemarks.setText("");
    
     }//GEN-LAST:event_btnNewActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        String strBook="";
-        String strNewsPape="";
-        String strJornals="";
+       int jp= JOptionPane.showConfirmDialog(null,"are u Sure","notes!",JOptionPane.YES_NO_OPTION);
+        if(jp== JOptionPane.OK_OPTION)
+        {
+        String strType=null;
         if(chebBooks.isSelected())
-            strBook="X";
-        if(chebNewpapers.isSelected())
-            strNewsPape="X";
-        if(chebJournalsandMagazines.isSelected())
-            strJornals="X";
+            strType="Books";
+        else if(chebNewpapers.isSelected())
+            strType="Newpapers";
+        else if(chebJournalsandMagazines.isSelected())
+            strType="Journals and Magazines";
         PreparedStatement stmt = null;
         try {
           Connection conn=DriverManager.getConnection(url,user,pass);
-             String sql = "insert into books values('"+txtName.getText()+"','"+strBook+"','"+strJornals+"','"+strNewsPape+"','"+txtAddress.getText()+"','"+txtContactNo.getText()+"','"+txtEmail.getText()+"','"+jTxtaRemarks.getText()+"')";
+             String sql = "insert into tb_books values('"+txtName.getText()+"','"+strType+"','"+txtAddress.getText()+"','"+txtContactNo.getText()+"','"+txtEmail.getText()+"','"+jTxtaRemarks.getText()+"')";
             stmt = conn.prepareStatement(sql);
              int rows = stmt.executeUpdate();
              System.out.println("insert succeedfull : " + rows );
@@ -423,23 +441,38 @@ public class BookSuppliers extends javax.swing.JFrame {
             Logger.getLogger(BookSuppliers.class.getName()).log(Level.SEVERE, null, ex);
         }
         loadData();
+        txtID.setText("");
+        txtAddress.setText("");
+        txtContactNo.setText("");
+        txtEmail.setText("");
+        txtName.setText("");
+        jTxtaRemarks.setText("");
+        }else{
+             txtID.setText("");
+        txtAddress.setText("");
+        txtContactNo.setText("");
+        txtEmail.setText("");
+        txtName.setText("");
+        jTxtaRemarks.setText("");
+        }
     }//GEN-LAST:event_btnSaveActionPerformed
     
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-        String strBook="";
-        String strNewsPape="";
-        String strJornals="";
+        int jp= JOptionPane.showConfirmDialog(null,"are u Sure","notes!",JOptionPane.YES_NO_OPTION);
+        if(jp== JOptionPane.OK_OPTION)
+        {
+         String strType=null;
         if(chebBooks.isSelected())
-            strBook="X";
+            strType="Books";
         else if(chebNewpapers.isSelected())
-            strNewsPape="X";
+            strType="Newpapers";
         else if(chebJournalsandMagazines.isSelected())
-            strJornals="X";
+            strType="Journals and Magazines";
         PreparedStatement stmt = null;
         try {
            Connection conn=DriverManager.getConnection(url,user,pass);
-             String sql = "delete from books where id="+txtID.getText();
+             String sql = "delete from tb_books where id="+txtID.getText();
             stmt = conn.prepareStatement(sql);
              int rows = stmt.executeUpdate();
              System.out.println("delete succeedfull : " + rows );
@@ -448,6 +481,21 @@ public class BookSuppliers extends javax.swing.JFrame {
             Logger.getLogger(BookSuppliers.class.getName()).log(Level.SEVERE, null, ex);
         }
         loadData();
+        txtID.setText("");
+        txtAddress.setText("");
+        txtContactNo.setText("");
+        txtEmail.setText("");
+        txtName.setText("");
+        jTxtaRemarks.setText("");
+        }else{
+             txtID.setText("");
+        txtAddress.setText("");
+        txtContactNo.setText("");
+        txtEmail.setText("");
+        txtName.setText("");
+        jTxtaRemarks.setText("");
+        }
+        
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
@@ -459,26 +507,24 @@ public class BookSuppliers extends javax.swing.JFrame {
         
         String id=tblData.getModel().getValueAt(selectR,0).toString();
         String name=tblData.getModel().getValueAt(selectR,1).toString();
-        String books=tblData.getModel().getValueAt(selectR,2).toString();
-        String newspapers=tblData.getModel().getValueAt(selectR,3).toString();
-        String JornalsandMagazines=tblData.getModel().getValueAt(selectR,4).toString();
-        String Address=tblData.getModel().getValueAt(selectR,5).toString();
-        String Contac=tblData.getModel().getValueAt(selectR,6).toString();
-        String mail=tblData.getModel().getValueAt(selectR,7).toString();
-        //String remarks=tblData.getModel().getValueAt(selectR,8).toString();
+        String supplierType=tblData.getModel().getValueAt(selectR,2).toString();
+        String Address=tblData.getModel().getValueAt(selectR,3).toString();
+        String Contac=tblData.getModel().getValueAt(selectR,4).toString();
+        String mail=tblData.getModel().getValueAt(selectR,5).toString();
+        String remarks=tblData.getModel().getValueAt(selectR,6).toString();
+        //JOptionPane.showMessageDialog(null,supplierType);
         txtID.setText(id);
         txtName.setText(name);
         txtAddress.setText(Address);
         txtContactNo.setText(Contac);
         txtEmail.setText(mail);
-       if(books=="X")
+       if(supplierType=="Books")
        {chebBooks.doClick();}
-      else if(newspapers=="X")
+      else if(supplierType=="Newpapers")
        {chebNewpapers.doClick();}
-       else if(JornalsandMagazines=="X")
+       else if(supplierType=="Newpapers")
        {chebJournalsandMagazines.doClick();}
-        
-        //jTxtaRemarks.setText(remarks);
+        jTxtaRemarks.setText(remarks);
     }
     private void tblDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDataMouseClicked
         // TODO add your handling code here:
@@ -505,9 +551,9 @@ public class BookSuppliers extends javax.swing.JFrame {
     private void loadData(){
         try {
             tblData.removeAll();
-            String[] arr= {"Supplier ID","Supplier Name","Books","Newspapers","Journals and Magazines","Address","Contact No","Email ID","Remarks"};
+            String[] arr= {"Supplier ID","Supplier Name","Supplier Type","Address","Contact No","Email ID","Remarks"};
         
-            String sql="select *from books";
+            String sql="select *from tb_books";
             model=new DefaultTableModel(arr,0);
             Connection conn=DriverManager.getConnection(url, user, pass);
             PreparedStatement ps=conn.prepareStatement(sql);
@@ -522,12 +568,13 @@ public class BookSuppliers extends javax.swing.JFrame {
                 vector.add(rs.getString(5));
                 vector.add(rs.getString(6));
                 vector.add(rs.getString(7));
-                vector.add(rs.getString(8));
                 model.addRow(vector);
                 
             }
             tblData.setModel(model);
             conn.close();
+            rs.close();
+            ps.close();
         } catch (SQLException ex) {
             Logger.getLogger(BookSuppliers.class.getName()).log(Level.SEVERE, null, ex);
         }
