@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TroChoiXepO;
+package com.dhpm11.tuan3;
 
 import java.util.ArrayList;
 import java.util.Random;
