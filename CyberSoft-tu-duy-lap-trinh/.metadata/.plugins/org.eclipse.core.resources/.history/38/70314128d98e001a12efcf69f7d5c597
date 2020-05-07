@@ -1,0 +1,113 @@
+/**
+ * lớp ds sinh viên dùng để quản lý danh sách sinh viên
+ * @author kha_ng
+ * ngày tạo: 5-5-2020
+ * phiên bản :
+ */
+package QLSinhVien;
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class DanhSachSV {
+	// attribute
+	private LinkedList<SinhVien> ListSV;
+
+	// constructors
+	public DanhSachSV() {
+		 this.ListSV=new LinkedList<SinhVien>();
+	}
+
+	public DanhSachSV(LinkedList<SinhVien> listSV) {
+		 this.ListSV=new LinkedList<SinhVien>();
+		this.ListSV = listSV;
+	}
+
+	// methods
+	public void nhapDSSV() {
+		SinhVien sv1=new SinhVien("Sinh viên giỏi 1","sv1",8.5,7.7,8.4);
+		this.ListSV.add(sv1);
+		SinhVien sv2=new SinhVien("Sinh viên giỏi 2","sv2",8.5,7.7,8.4);
+		this.ListSV.add(sv2);
+		SinhVien sv3=new SinhVien("Sinh viên yếu 3","sv3",4.2,2.2,3.4);
+		this.ListSV.add(sv3);
+		SinhVien sv4=new SinhVien("Sinh viên yếu 4","sv4",4.8,4.2,3.4);
+		this.ListSV.add(sv4);
+		SinhVien sv5=new SinhVien("Sinh viên yếu 4","sv5",3.7,5.2,3.4);
+		this.ListSV.add(sv5);
+//		for (int i = 0; i < n; i++) {
+//			System.out.println("sinh viên " + (i + 1) + " : ");
+//			sv = new SinhVien();
+//			sv.nhap();
+//			this.ListSV.add(sv);
+//		}
+		
+	}
+	public void xuatDSSV() {
+//		for (int i = 0; i < this.ListSV.size(); i++) {
+//			System.out.println("sinh Viên " + (i + 1));
+//			this.ListSV.get(i).xuat();
+//			System.out.println("xếp loại " + ListSV.get(i).xepLoai());
+//			System.out.println("-------------------------------------------------------");
+//		}
+		//cach 2 :
+		for(SinhVien sv : this.ListSV) {
+			sv.xuat();
+		}
+	}
+	public LinkedList<SinhVien> timSVtheoten(String ten){
+		LinkedList<SinhVien> kq=new LinkedList<SinhVien>();
+		
+		for(int i=0;i<this.ListSV.size();i++) {
+			if(this.ListSV.get(i).getTen().equalsIgnoreCase(ten))
+			{
+				kq.add(this.ListSV.get(i));
+			}
+		}
+		return kq;
+		
+	}
+	public boolean timSVtheoMaSV(SinhVien sv) {
+		boolean kiemtra=false;
+		String maCantim=null;
+		Scanner sn=new Scanner(System.in);
+		System.out.println("ma cần tìm :");
+		maCantim=sn.nextLine();
+		for(SinhVien sinhvien: this.ListSV) {
+			if(sinhvien.getMaSV().equalsIgnoreCase(maCantim)) {
+				sv=sinhvien;
+				kiemtra=true;
+				break;
+			}
+		}
+		return kiemtra;
+	}
+	public  LinkedList<SinhVien> svDiemCaoNhat() {
+		SinhVien max = new SinhVien();
+		LinkedList<SinhVien> ListSVMax = new LinkedList<SinhVien>();
+		max = this.ListSV.get(0);
+		for (int i = 0; i < this.ListSV.size(); i++) {
+			if (max.diemtb() < this.ListSV.get(i).diemtb()) {
+				max=this.ListSV.get(i);
+			}
+		}
+		for (int i = 0; i < this.ListSV.size(); i++) {
+			if (this.ListSV.get(i).diemtb()==max.diemtb()) {
+				ListSVMax.add(this.ListSV.get(i));
+			}
+		}
+		
+		return ListSVMax;
+	}
+
+	public LinkedList<SinhVien> svYeu() {
+		LinkedList<SinhVien> ListSVyeu = new LinkedList<SinhVien>();
+		for (int i = 1; i < this.ListSV.size(); i++) {
+			if (this.ListSV.get(i).xepLoai().equalsIgnoreCase("Yếu")) {
+				ListSVyeu.add(this.ListSV.get(i));
+			}
+		}
+		return ListSVyeu;
+	}
+	
+}

@@ -1,0 +1,15 @@
+package QLSinhVien;
+
+public class main {
+
+	public static void main(String[] args) {
+		//đầu vào 
+		 SinhVien sv =new SinhVien();
+		//nhập dữ liệu
+		 sv.nhap();
+		//xử lý 
+		//đầu ra
+
+	}
+
+}

@@ -1,0 +1,31 @@
+package QLNganHang;
+
+import java.util.LinkedList;
+
+public class DanhSachTaiKhoan {
+	//attributes
+	private LinkedList<TaiKhoan> ListTK;
+	//constructors
+	public DanhSachTaiKhoan() {
+		this.ListTK=new LinkedList<TaiKhoan>();
+	}
+	
+	public DanhSachTaiKhoan(LinkedList<TaiKhoan> listTK) {
+		ListTK = listTK;
+	}
+	//methods
+	public void nhapDSTK() {
+		TaiKhoan tk1=new TaiKhoan("STK1","Tên Tài Khoản 1",39900000);
+		TaiKhoan tk2=new TaiKhoan("STK2","Tên Tài Khoản 2",120000000);
+		TaiKhoan tk3=new TaiKhoan("STK3","Tên Tài Khoản 3",19900000);
+		TaiKhoan tk4=new TaiKhoan("STK4","Tên Tài Khoản 4",29900000);
+		TaiKhoan tk5=new TaiKhoan("STK5","Tên Tài Khoản 5",40900000);
+		TaiKhoan tk6=new TaiKhoan("STK6","Tên Tài Khoản 6",16200000);
+		TaiKhoan tk7=new TaiKhoan("STK7","Tên Tài Khoản 7",79900000);
+	}
+	public void xuatDSTK() {
+		for(TaiKhoan tk :this.ListTK) {
+			tk.xuat();
+		}
+	}
+}

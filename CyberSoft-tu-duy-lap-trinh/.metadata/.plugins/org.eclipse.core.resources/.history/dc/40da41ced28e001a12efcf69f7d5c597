@@ -1,0 +1,40 @@
+package QLSinhVien;
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		// đầu vào
+		Scanner sn = new Scanner(System.in);
+		DanhSachSV ListSV = new DanhSachSV();
+		// nhập dữ liệu
+//		System.out.println("nhập n sinh viên : ");
+//		int n = Integer.parseInt(sn.nextLine());
+		ListSV.nhapDSSV();
+
+		// xử lý
+
+		// đầu ra
+		System.out.println("danh sach sv : ");
+		ListSV.xuatDSSV();
+		System.out.println("-----------------------------------------");
+		System.out.println("danh sách  sinh viên yếu là : ");
+		xuatDSmoi(ListSV.svYeu());
+		System.out.println("-----------------------------------------");
+		System.out.println("Sinh viên cao nhất  là : ");
+		xuatDSmoi(ListSV.svDiemCaoNhat());
+		System.out.println("-----------------------------------------");
+		System.out.println("tìm sv theo tên:");
+		String ten=sn.nextLine();
+		xuatDSmoi(ListSV.timSVtheoten(ten));
+	}
+	
+	
+	public static void xuatDSmoi(LinkedList<SinhVien> ListSv) {
+		for (SinhVien sv : ListSv) {
+			sv.xuat();
+		}
+	}
+}

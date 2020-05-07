@@ -1,0 +1,24 @@
+package QLSinhVien;
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		// đầu vào
+		Scanner sn = new Scanner(System.in);
+		LinkedList<SinhVien> ListSv = new LinkedList<SinhVien>();
+		SinhVien sv;
+		// nhập dữ liệu
+		System.out.println("nhập n sinh viên : ");
+		int n = Integer.parseInt(sn.nextLine());
+
+		
+		// xử lý
+
+		// đầu ra
+		
+		System.out.println("sinh vien cao nhất là : ");
+	}
+}

@@ -1,0 +1,27 @@
+package QLSinhVien;
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		// đầu vào
+		Scanner sn = new Scanner(System.in);
+		DanhSachSV ListSV=new DanhSachSV();
+		// nhập dữ liệu
+//		System.out.println("nhập n sinh viên : ");
+//		int n = Integer.parseInt(sn.nextLine());
+		ListSV.nhapDSSV();
+		
+		// xử lý
+
+		// đầu ra
+		
+		System.out.println("sinh vien cao nhất là : ");
+		LinkedList<SinhVien> listSVmax=ListSV.svDiemCaoNhat();
+		for(SinhVien sv : listSVmax) {
+			sv.xuat();
+		}
+	}
+}

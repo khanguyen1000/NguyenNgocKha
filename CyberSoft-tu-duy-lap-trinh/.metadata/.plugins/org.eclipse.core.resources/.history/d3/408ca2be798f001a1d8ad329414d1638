@@ -1,0 +1,15 @@
+package QLNganHang;
+
+public class main {
+
+	public static void main(String[] args) {
+		TaiKhoan tk=new TaiKhoan();
+		System.out.println();
+		System.out.println("1. Nhập thông tin Tài khoản ");
+		System.out.println();
+		System.out.println("2. xuất thông tin tài khoản ");
+		System.out.println();
+
+	}
+
+}

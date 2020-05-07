@@ -1,0 +1,30 @@
+package QLSinhVien;
+
+public class SinhVien {
+	//attribute
+	private String ten ;
+	private int maSV;
+	private double diemToan;
+	private double diemLy;
+	private double diemHoa;
+	//constructors
+	public SinhVien() {
+		
+	}
+	public SinhVien(String ten, int maSV,double diemToan,double diemHoa,double diemLy) {
+		this.ten=ten;
+		this.maSV=maSV;
+		this.diemToan=diemToan;
+		this.diemLy=diemLy;
+		this.diemHoa=diemHoa;
+	}
+	//methods
+	public double diemtb() {
+		double dtb=(this.diemToan+this.diemLy+this.diemHoa)/3;
+	
+		return dtb;
+	}
+	public void xepLoai() {
+		
+	}
+}

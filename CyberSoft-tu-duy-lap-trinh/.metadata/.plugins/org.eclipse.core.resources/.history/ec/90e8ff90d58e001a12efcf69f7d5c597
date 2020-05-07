@@ -1,0 +1,90 @@
+package QLSinhVien;
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		// đầu vào
+		Scanner sn = new Scanner(System.in);
+		DanhSachSV ListSV = new DanhSachSV();
+		// nhập dữ liệu
+//		System.out.println("nhập n sinh viên : ");
+//		int n = Integer.parseInt(sn.nextLine());
+		//
+		// xử lý
+
+		// đầu ra
+		
+
+//		String Masv = sn.nextLine();
+//		if (ListSV.timSVtheoMaSV(Masv)) {
+//			System.out.println("có");
+//		} else {
+//			System.out.println("ko");
+//		}
+		do {
+			System.out.println("-----------------------------------------");
+			System.out.println(" 1_Nhập ds Sinh viên ");
+			System.out.println("-----------------------------------------");
+			System.out.println(" 2_danh sách  sinh viên yếu ");
+
+			System.out.println("-----------------------------------------");
+			System.out.println("3_Sinh viên cao nhất ");
+
+			System.out.println("-----------------------------------------");
+			System.out.println("4_tìm sv theo tên");
+
+			System.out.println("-----------------------------------------");
+			System.out.println("5_tìm sv theo Mã:");
+
+			System.out.println("-----------------------------------------");
+			System.out.println("0_thoát");
+			System.out.println("-----------------------------------------");
+			System.out.println("lua chon:");
+			int lc = Integer.parseInt(sn.nextLine());
+			switch (lc) {
+			case 1: {
+				System.out.println("thành công");
+				ListSV.nhapDSSV();
+				break;
+			}
+			case 2: {
+				xuatDSmoi(ListSV.svYeu(), "không có sinh viên yếu");
+				break;
+			}
+			case 3: {
+				xuatDSmoi(ListSV.svDiemCaoNhat(), "không có sinh viên cao nhất");
+				break;
+			}
+			case 4: {
+				System.out.println("4_tìm sv theo tên");
+				String ten = sn.nextLine();
+				xuatDSmoi(ListSV.timSVtheoten(ten), "không có kết quả");
+				break;
+			}
+			default :{
+				System.out.println("vui lòng chọn từ 0-> 5");
+				break;
+			}
+			
+			}
+			if (lc == 0) {
+				break;
+			}
+		} while (true);
+
+	}
+
+	public static void xuatDSmoi(LinkedList<SinhVien> ListSv, String alert) {
+		if (ListSv.size() == 0) {
+			System.out.println(alert);
+		} else {
+			for (SinhVien sv : ListSv) {
+				sv.xuat();
+				System.out.println();
+			}
+		}
+	}
+}

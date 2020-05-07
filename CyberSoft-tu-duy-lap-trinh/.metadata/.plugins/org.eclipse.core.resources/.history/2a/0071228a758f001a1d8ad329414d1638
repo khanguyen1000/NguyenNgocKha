@@ -1,0 +1,90 @@
+/**
+ * lớp tài khoản gồm số tài khoản, tên tài khoản ,số tiền trong tài khoản
+ * @author kha_ng
+ * ngày tạo : 6-5-2020
+ * phiên bản :
+ */
+
+package QLNganHang;
+
+import java.util.Scanner;
+
+public class TaiKhoan {
+	// attributes
+	private String soTK;
+	private String tenTK;
+	private double soTienTK;
+
+	// constructors
+	public TaiKhoan() {
+
+	}
+
+	public TaiKhoan(String soTK, String tenTK, double soTienTK) {
+		super();
+		this.soTK = soTK;
+		this.tenTK = tenTK;
+		this.soTienTK = soTienTK;
+	}
+
+	// get set methods
+	public String getSoTK() {
+		return soTK;
+	}
+
+	private void setSoTK(String soTK) {
+		this.soTK = soTK;
+	}
+
+	public String getTenTK() {
+		return tenTK;
+	}
+
+	private void setTenTK(String tenTK) {
+		this.tenTK = tenTK;
+	}
+
+	public double getSoTienTK() {
+		return soTienTK;
+	}
+
+	private void setSoTienTK(double soTienTK) {
+		this.soTienTK = soTienTK;
+	}
+
+	// methods
+	public void nhap() {
+//		Scanner sn =new Scanner(System.in);
+//		System.out.println("nhập số tài khoản : ");
+//		this.soTK=sn.nextLine();
+//		System.out.println("nhập tên tài khoản : ");
+//		this.tenTK=sn.nextLine();
+//		System.out.println("nhập số tiền trong tài khoản : ");
+//		this.soTienTK=sn.nextDouble();
+		TaiKhoan tk1=new TaiKhoan("STK1","Tên Tài Khoản 1",39900000);
+		TaiKhoan tk2=new TaiKhoan("STK2","Tên Tài Khoản 2",120000000);
+		TaiKhoan tk3=new TaiKhoan("STK3","Tên Tài Khoản 3",19900000);
+		TaiKhoan tk4=new TaiKhoan("STK4","Tên Tài Khoản 4",29900000);
+		TaiKhoan tk5=new TaiKhoan("STK5","Tên Tài Khoản 5",40900000);
+		TaiKhoan tk6=new TaiKhoan("STK6","Tên Tài Khoản 6",16200000);
+		TaiKhoan tk7=new TaiKhoan("STK7","Tên Tài Khoản 7",79900000);
+		
+	}
+
+	public void xuat() {
+		System.out.println("số tài khoản : "+this.soTK);
+		System.out.println("tên tài khoản : "+this.tenTK);
+		System.out.println("số tiền trong tài khoản : "+this.soTienTK);
+	}
+
+	public void napTien(double soTienNapVao) {
+		this.soTienTK=this.soTienTK+soTienNapVao;
+	}
+
+	public void rutTien(double soTienRut) {
+		this.soTienTK=this.soTienTK-soTienRut-1000;
+	}
+	public void chuyenKhoan() {
+		
+	}
+}

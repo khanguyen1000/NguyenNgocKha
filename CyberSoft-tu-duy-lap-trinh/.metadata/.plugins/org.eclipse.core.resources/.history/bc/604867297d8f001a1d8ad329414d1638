@@ -1,0 +1,109 @@
+package QLNganHang;
+
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		// đầu vào
+		Scanner sn = new Scanner(System.in);
+		DanhSachTaiKhoan ListTK = new DanhSachTaiKhoan();
+		// xử lý
+		do {
+			System.out.println();
+			System.out.println("1. Nhập thông tin Tài khoản ");
+			System.out.println();
+			System.out.println("2. xuất danh sách thông tin tài khoản ");
+			System.out.println();
+			System.out.println("3. Nạp tiền vào tài khoản ");
+			System.out.println();
+			System.out.println("4. Rút tiền ra tài khoản ");
+			System.out.println();
+			System.out.println("5. Chuyển khoản ");
+			System.out.println();
+			System.out.println("0. thoát ");
+			System.out.println();
+			System.out.println("lựa chọn của bạn : ");
+			int luachon = Integer.parseInt(sn.nextLine());
+
+			switch (luachon) {
+			case 1: {
+				System.out.println();
+				System.out.println("1. Nhập thông tin Tài khoản ");
+				ListTK.nhapDSTK();
+				System.out.println("thành công ");
+				break;
+			}
+			case 2: {
+				System.out.println();
+				System.out.println("2. xuất danh sách thông tin tài khoản ");
+				System.out.println();
+				ListTK.xuatDSTK();
+				break;
+			}
+			case 3: {
+				System.out.println();
+				System.out.println("3. Nạp tiền vào tài khoản ");
+				System.out.println();
+				TaiKhoan tk = new TaiKhoan();
+				if (ListTK.kiemTraTaiKhoan(tk)) {
+					System.out.println("----tài khoản----");
+					tk.xuat();
+					System.out.println();
+					System.out.println("số tiền cần Nạp :");
+					double stn = Double.parseDouble(sn.nextLine());
+					tk.napTien(stn);
+					tk.xuat();
+					ListTK.CapnhatDanhSach(tk);
+				} else {
+					System.out.println("không tồn tại tài khoản này ");
+				}
+				break;
+			}
+			case 4: {
+				System.out.println();
+				System.out.println("4. Rút tiền ra tài khoản ");
+				System.out.println();
+				TaiKhoan tk = new TaiKhoan();
+				if (ListTK.kiemTraTaiKhoan(tk)) {
+					System.out.println("----tài khoản----");
+					tk.xuat();
+					System.out.println();
+					System.out.println("số tiền cần Rút :");
+					double str = Double.parseDouble(sn.nextLine());
+					System.out.println("thuế "+tk.rutTien(str));
+					tk.xuat();
+					ListTK.CapnhatDanhSach(tk);
+				} else {
+					System.out.println("không tồn tại tài khoản này ");
+				}
+				break;
+			}
+			case 5: {
+				
+				break;
+			}
+			case 0: {
+				System.out.println(" cảm ơn đã sử dụng ");
+				break;
+			}
+			default: {
+				System.out.println();
+				System.out.println("vui lòng lựa chọn 1- 5 lựa chọn trên");
+				break;
+			}
+			}
+
+			if (luachon == 0) {
+				break;
+			} else {
+				System.out.println();
+				System.out.println("vui lòng nhấn phím enter để tiếp tục ");
+				sn.nextLine();
+
+			}
+
+		} while (true);
+	}
+
+}

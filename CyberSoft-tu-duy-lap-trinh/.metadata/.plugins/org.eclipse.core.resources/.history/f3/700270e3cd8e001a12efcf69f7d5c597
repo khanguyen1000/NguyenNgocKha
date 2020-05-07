@@ -1,0 +1,75 @@
+/**
+ * lớp ds sinh viên dùng để quản lý danh sách sinh viên
+ * @author kha_ng
+ * ngày tạo: 5-5-2020
+ * phiên bản :
+ */
+package QLSinhVien;
+
+import java.util.LinkedList;
+
+public class DanhSachSV {
+	// attribute
+	private LinkedList<SinhVien> ListSV;
+
+	// constructors
+	public DanhSachSV() {
+		 this.ListSV=new LinkedList<SinhVien>();
+	}
+
+	public DanhSachSV(LinkedList<SinhVien> listSV) {
+		 this.ListSV=new LinkedList<SinhVien>();
+		this.ListSV = listSV;
+	}
+
+	// methods
+	public void nhapDSSV(int n) {
+		SinhVien sv=new SinhVien();
+		for (int i = 0; i < n; i++) {
+			System.out.println("sinh viên " + (i + 1) + " : ");
+			sv = new SinhVien();
+			sv.nhap();
+			this.ListSV.add(sv);
+		}
+	}
+	public void xuatDSSV() {
+		for (int i = 0; i < this.ListSV.size(); i++) {
+			System.out.println("sinh Viên " + (i + 1));
+			this.ListSV.get(i).xuat();
+			System.out.println("xếp loại " + ListSV.get(i).xepLoai());
+			System.out.println("-------------------------------------------------------");
+		}
+	}
+	public LinkedList<SinhVien> timSVtheoten(){
+		
+		
+	}
+	public boolean timSVtheoMa(SinhVien sv) {
+		boolean kiemtra=false;
+		
+		return kiemtra;
+	}
+	public  LinkedList<SinhVien> svDiemCaoNhat() {
+		SinhVien sv = new SinhVien();
+		LinkedList<SinhVien> ListSVMax = new LinkedList<SinhVien>();
+		sv = this.ListSV.get(0);
+		for (int i = 1; i < this.ListSV.size(); i++) {
+			if (sv.diemtb() < this.ListSV.get(i).diemtb()) {
+				ListSVMax.add(this.ListSV.get(i));
+			}
+		}
+		return ListSVMax;
+	}
+
+	public LinkedList<SinhVien> svYeu() {
+		SinhVien sv = new SinhVien();
+		LinkedList<SinhVien> ListSVyeu = new LinkedList<SinhVien>();
+		for (int i = 1; i < this.ListSV.size(); i++) {
+			if (this.ListSV.get(i).xepLoai() == "yếu") {
+				ListSVyeu.add(this.ListSV.get(i));
+			}
+		}
+		return ListSVyeu;
+	}
+
+}

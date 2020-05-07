@@ -1,0 +1,9 @@
+package QLSinhVien;
+
+public class SinhVien {
+
+	public SinhVien() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

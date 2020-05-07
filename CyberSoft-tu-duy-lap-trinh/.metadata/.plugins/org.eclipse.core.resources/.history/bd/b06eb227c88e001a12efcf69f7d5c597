@@ -1,0 +1,28 @@
+package QLSinhVien;
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		//đầu vào 
+		 Scanner sn=new Scanner(System.in);
+		 LinkedList<SinhVien> ListSv=new LinkedList<SinhVien>();
+		 SinhVien sv;
+		 //nhập dữ liệu
+		 System.out.println("nhập n sinh viên : ");
+		 int n=Integer.parseInt(sn.nextLine());
+		 
+		 for(int i=0;i<n;i++) {
+			 sv=new SinhVien();
+			 sv.nhap();
+			 ListSv.add(sv);
+		 }
+		//xử lý 
+		//đầu ra
+		 System.out.println("xếp loại : ");
+
+	}
+
+}

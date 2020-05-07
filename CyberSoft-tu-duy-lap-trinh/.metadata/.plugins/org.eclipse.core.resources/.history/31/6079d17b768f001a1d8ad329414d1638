@@ -1,0 +1,9 @@
+package QLNganHang;
+
+public class DanhSachTaiKhoan {
+
+	public DanhSachTaiKhoan() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

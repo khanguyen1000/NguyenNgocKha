@@ -1,0 +1,9 @@
+package QLSinhVien;
+
+public class DanhSachSV {
+
+	public DanhSachSV() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

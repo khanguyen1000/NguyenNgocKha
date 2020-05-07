@@ -1,0 +1,72 @@
+/**
+ * lớp tài khoản gồm số tài khoản, tên tài khoản ,số tiền trong tài khoản
+ * @author kha_ng
+ * ngày tạo : 6-5-2020
+ * phiên bản :
+ */
+
+package QLNganHang;
+
+public class TaiKhoan {
+	// attributes
+	private String soTK;
+	private String tenTK;
+	private double soTienTK;
+
+	// constructors
+	public TaiKhoan() {
+
+	}
+
+	public TaiKhoan(String soTK, String tenTK, double soTienTK) {
+		super();
+		this.soTK = soTK;
+		this.tenTK = tenTK;
+		this.soTienTK = soTienTK;
+	}
+
+	// get set methods
+	public String getSoTK() {
+		return soTK;
+	}
+
+	private void setSoTK(String soTK) {
+		this.soTK = soTK;
+	}
+
+	public String getTenTK() {
+		return tenTK;
+	}
+
+	private void setTenTK(String tenTK) {
+		this.tenTK = tenTK;
+	}
+
+	public double getSoTienTK() {
+		return soTienTK;
+	}
+
+	private void setSoTienTK(double soTienTK) {
+		this.soTienTK = soTienTK;
+	}
+
+	// methods
+	public void nhap() {
+
+	}
+
+	public void xuat() {
+
+	}
+
+	public void napTien(double soTienNapVao) {
+
+	}
+
+	public void rutTien(double soTienRut) {
+
+	}
+	public void chuyenKhoan() {
+		
+	}
+}

@@ -1,0 +1,56 @@
+package QLSinhVien;
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		// đầu vào
+		Scanner sn = new Scanner(System.in);
+		DanhSachSV ListSV = new DanhSachSV();
+		// nhập dữ liệu
+//		System.out.println("nhập n sinh viên : ");
+//		int n = Integer.parseInt(sn.nextLine());
+		//
+		// xử lý
+
+		// đầu ra
+		System.out.println("-----------------------------------------");
+		System.out.println(" 1_Nhập ds Sinh viên ");
+		System.out.println("-----------------------------------------");
+		System.out.println(" 2_danh sách  sinh viên yếu ");
+		xuatDSmoi(ListSV.svYeu());
+		System.out.println("-----------------------------------------");
+		System.out.println("3_Sinh viên cao nhất ");
+		xuatDSmoi(ListSV.svDiemCaoNhat());
+		System.out.println("-----------------------------------------");
+		System.out.println("4_tìm sv theo tên");
+		String ten=sn.nextLine();
+		xuatDSmoi(ListSV.timSVtheoten(ten));
+		System.out.println("-----------------------------------------");
+		System.out.println("5_tìm sv theo Mã:");
+		String Masv=sn.nextLine();
+		if(ListSV.timSVtheoMaSV(Masv)) {
+			System.out.println("có");
+		}else {
+			System.out.println("ko");
+		}
+		System.out.println("lua chon:");
+		int lc=Integer.parseInt(sn.nextLine());
+		switch() {
+		
+		}
+		
+	}
+
+	public static void xuatDSmoi(LinkedList<SinhVien> ListSv,String alert) {
+		if (ListSv.size() == 0) {
+			System.out.println(alert);
+		} else {
+			for (SinhVien sv : ListSv) {
+				sv.xuat();
+			}
+		}
+	}
+}

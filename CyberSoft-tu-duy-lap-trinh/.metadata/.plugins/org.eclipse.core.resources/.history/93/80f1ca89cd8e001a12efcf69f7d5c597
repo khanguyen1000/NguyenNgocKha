@@ -1,0 +1,47 @@
+package QLSinhVien;
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		//đầu vào 
+		 Scanner sn=new Scanner(System.in);
+		 LinkedList<SinhVien> ListSv=new LinkedList<SinhVien>();
+		 SinhVien sv;
+		 //nhập dữ liệu
+		 System.out.println("nhập n sinh viên : ");
+		 int n=Integer.parseInt(sn.nextLine());
+		 
+		 for(int i=0;i<n;i++) {
+			 System.out.println("sinh viên "+(i+1)+" : ");
+			 sv=new SinhVien();
+			 sv.nhap();
+			 ListSv.add(sv);
+		 }
+		//xử lý 
+		 SinhVien svMax=diemTBcaoNhat(n,ListSv);
+		 
+		//đầu ra
+		 for(int i=0;i<n;i++) {
+			 System.out.println("sinh Viên "+(i+1));
+			 ListSv.get(i).xuat();
+			 System.out.println("xếp loại "+ ListSv.get(i).xepLoai());
+			 System.out.println("-------------------------------------------------------");
+		 }
+		 System.out.println("sinh vien cao nhất là : ");
+		 svMax.xuat();
+
+	}
+	public static SinhVien diemTBcaoNhat(int n,LinkedList<SinhVien> ListSv) {
+		SinhVien sv=new SinhVien();
+			sv=ListSv.get(0);
+		for(int i=1;i<n;i++ ) {
+				if(sv.diemtb()<ListSv.get(i).diemtb()) {
+					sv=ListSv.get(i);
+				}
+			}
+		return sv;
+	}
+}

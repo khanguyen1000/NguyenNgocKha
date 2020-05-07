@@ -1,0 +1,9 @@
+package QLNganHang;
+
+public class TaiKhoan {
+
+	public TaiKhoan() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
