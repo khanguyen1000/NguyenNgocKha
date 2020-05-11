@@ -15,9 +15,14 @@
     <fullyQualifiedTypeName name="phanSO.PhanSo"/>
     <fullyQualifiedTypeName name="QLSinhVien.DanhSachSV"/>
     <fullyQualifiedTypeName name="QLSinhVien.SinhVien"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="QLNganHang.DanhSachTaiKhoan"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="QLNganHang.TaiKhoan"/>
     <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="QLNganHang.TaiKhoan"/>
+    <fullyQualifiedTypeName name="java.nio.channels.NonWritableChannelException"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="QLChuyenXe.ChuyenXe"/>
+    <fullyQualifiedTypeName name="QLChuyenXe.XeNoiThanh"/>
+    <fullyQualifiedTypeName name="QLChuyenXe.XeNgoaiThanh"/>
+    <fullyQualifiedTypeName name="QLChuyenXe.Cty"/>
 </qualifiedTypeNameHistroy>

@@ -64,5 +64,18 @@ public class DanhSachTaiKhoan {
 		}
 		return kq;
 	}
+	public TaiKhoan kiemTraTaiKhoan(String alert) {
+		TaiKhoan tk=new TaiKhoan();
+		Scanner sn=new Scanner(System.in);
+		boolean kq = false;
+		System.out.println("nhập số tài khoản "+alert+":");
+		String stk=sn.nextLine();
+		for (TaiKhoan taikhoan : this.ListTK) {
+			if (taikhoan.getSoTK().equalsIgnoreCase(stk)) {
+				tk=taikhoan;
+			}
+		}
+		return tk;
+	}
 
 }

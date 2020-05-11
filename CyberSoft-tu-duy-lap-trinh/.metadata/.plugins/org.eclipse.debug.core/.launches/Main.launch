@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-        <listEntry value="/buoi9/src/QLNganHang/main.java"/>
+        <listEntry value="/buoi10/src/QLChuyenXe/main.java"/>
     </listAttribute>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
         <listEntry value="1"/>
     </listAttribute>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
-    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="QLNganHang.main"/>
-    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="buoi9"/>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_CLASSPATH_ONLY_JAR" value="false"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="QLChuyenXe.main"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="buoi10"/>
 </launchConfiguration>
